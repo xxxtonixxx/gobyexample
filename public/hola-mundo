@@ -2,24 +2,12 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Hola Mundo</title>
+    <title>Go con Ejemplos: Hola Mundo</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
     <div class="example" id="hola-mundo">
-      <h2><a href="./">Go by Example</a>: Hola Mundo</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Hola Mundo</h2>
       
       <table>
         
@@ -30,7 +18,7 @@
 
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/vdOMuZpW2a"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/vdOMuZpW2a"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -42,7 +30,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -54,7 +42,7 @@
             
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span><span class="p">)</span>
 <span class="p">}</span>
@@ -74,7 +62,7 @@ un archivo llamado <code>hola-mundo.go</code> y ejecuta <code>go run</code>.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run hello-world.go
 <span class="go">hello world</span>
 </pre></div>
@@ -90,7 +78,7 @@ el comando <code>go build</code>.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go build hello-world.go
 <span class="gp">$</span> ls
 <span class="go">hello-world  hello-world.go</span>
@@ -105,7 +93,7 @@ el comando <code>go build</code>.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> ./hello-world
 <span class="go">hello world</span>
 </pre></div>
@@ -121,7 +109,7 @@ aprendamos más sobre el lenguaje.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -130,7 +118,7 @@ aprendamos más sobre el lenguaje.</p>
       
       
       <p class="next">
-        Next example: <a href="valores">Valores</a>.
+        Siguiente ejemplo: <a href="valores">Valores</a>.
       </p>
       
       <p class="footer">

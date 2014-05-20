@@ -2,24 +2,12 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Valores</title>
+    <title>Go con Ejemplos: Valores</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
     <div class="example" id="valores">
-      <h2><a href="./">Go by Example</a>: Valores</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Valores</h2>
       
       <table>
         
@@ -31,7 +19,7 @@ ejemplos básicos.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -41,7 +29,7 @@ ejemplos básicos.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/Ah9i7mWje6"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/Ah9i7mWje6"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -53,7 +41,7 @@ ejemplos básicos.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -65,7 +53,7 @@ ejemplos básicos.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -78,7 +66,7 @@ ejemplos básicos.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;go&quot;</span> <span class="o">+</span> <span class="s">&quot;lang&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -91,7 +79,7 @@ ejemplos básicos.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;1+1 =&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7.0/3.0 =&quot;</span><span class="p">,</span> <span class="mf">7.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span>
 </pre></div>
@@ -105,7 +93,7 @@ ejemplos básicos.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="kc">true</span> <span class="o">&amp;&amp;</span> <span class="kc">false</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="kc">true</span> <span class="o">||</span> <span class="kc">false</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(!</span><span class="kc">true</span><span class="p">)</span>
@@ -124,7 +112,7 @@ ejemplos básicos.</p>
             
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run values.go
 <span class="go">golang</span>
 <span class="go">1+1 = 2</span>
@@ -141,7 +129,7 @@ ejemplos básicos.</p>
       
       
       <p class="next">
-        Next example: <a href="variables">Variables</a>.
+        Siguiente ejemplo: <a href="variables">Variables</a>.
       </p>
       
       <p class="footer">
