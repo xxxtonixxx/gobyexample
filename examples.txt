@@ -1,7 +1,7 @@
 Hola Mundo
 Valores
 Variables
-Constants
+Constantes
 For
 If/Else
 Switch
