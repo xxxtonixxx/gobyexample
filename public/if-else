@@ -2,35 +2,23 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: If/Else</title>
+    <title>Go con Ejemplos: If/Else</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
     <div class="example" id="if-else">
-      <h2><a href="./">Go by Example</a>: If/Else</h2>
+      <h2><a href="./">Go con Ejemplos</a>: If/Else</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Branching with <code>if</code> and <code>else</code> in Go is
-straight-forward.</p>
+            <p>La derivación con <code>if</code> y <code>else</code> en Go
+se hace de una manera directa.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -40,7 +28,7 @@ straight-forward.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/p_ykufAYRj"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/pUixpY2FO3"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -52,7 +40,7 @@ straight-forward.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -64,7 +52,7 @@ straight-forward.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -73,11 +61,11 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a basic example.</p>
+            <p>Ejemplo básico.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">if</span> <span class="mi">7</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7 is even&quot;</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -90,11 +78,11 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>You can have an <code>if</code> statement without an else.</p>
+            <p>Puedes utilizar un <code>if</code> sin un else.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">if</span> <span class="mi">8</span><span class="o">%</span><span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;8 is divisible by 4&quot;</span><span class="p">)</span>
     <span class="p">}</span>
@@ -105,13 +93,14 @@ straight-forward.</p>
         
         <tr>
           <td class="docs">
-            <p>A statement can precede conditionals; any variables
-declared in this statement are available in all
-branches.</p>
+            <p>Los condicionales pueden ser precedidos por
+una declaración; cualquier
+variable declarada en dicha declaración estará disponible
+en todas las derivaciones.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;is negative&quot;</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
@@ -127,12 +116,12 @@ branches.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that you don&rsquo;t need parentheses around conditions
-in Go, but that the brackets are required.</p>
+            <p>Nota que no necesitas los paréntesis alrededor de las
+condiciones en Go, pero las llaves {} si son obligatorias.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -146,8 +135,8 @@ in Go, but that the brackets are required.</p>
             
           </td>
           <td class="code leading">
-	        
-            <div class="highlight"><pre><span class="gp">$</span> go run <span class="k">if</span>-else.go 
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run <span class="k">if</span>-else.go
 <span class="go">7 is odd</span>
 <span class="go">8 is divisible by 4</span>
 <span class="go">9 has 1 digit</span>
@@ -158,13 +147,13 @@ in Go, but that the brackets are required.</p>
         
         <tr>
           <td class="docs">
-            <p>There is no <a href="http://en.wikipedia.org/wiki/%3F:">ternary if</a>
-in Go, so you&rsquo;ll need to use a full <code>if</code> statement even
-for basic conditions.</p>
+            <p>No hay un <a href="http://es.wikipedia.org/wiki/%3F:">operador ternario</a>
+en Go, así que tendrás que usar una sentencia <code>if</code>
+completa aún para condiciones básicas.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -173,7 +162,7 @@ for basic conditions.</p>
       
       
       <p class="next">
-        Next example: <a href="switch">Switch</a>.
+        Siguiente ejemplo: <a href="switch">Switch</a>.
       </p>
       
       <p class="footer">
