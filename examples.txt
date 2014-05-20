@@ -7,7 +7,7 @@ If/Else
 Switch
 Arreglos
 Slices
-Maps
+Mapas
 Range
 Functions
 Multiple Return Values
