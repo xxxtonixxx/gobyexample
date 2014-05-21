@@ -9,7 +9,7 @@ Arreglos
 Slices
 Mapas
 Range
-Functions
+Funciones
 Multiple Return Values
 Variadic Functions
 Closures
