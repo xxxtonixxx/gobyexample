@@ -1,6 +1,6 @@
-// _range_ iterates over of elements in a variety of
-// data structures. Let's see how to use `range` with some
-// of the data structures we've already learned.
+// La función _range_ itera por los elementos de la mayoría
+// de las estructuras de datos. Veamos como podríamos usar
+// `range` con algunas de las que ya conocemos.
 
 package main
 
@@ -8,8 +8,8 @@ import "fmt"
 
 func main() {
 
-    // Here we use `range` to sum the numbers in a slice.
-    // Arrays work like this too.
+    // Aquí utilizamos `range` para sumar los numeros de un slice.
+    // En los arreglos funciona de manera similar.
     nums := []int{2, 3, 4}
     sum := 0
     for _, num := range nums {
@@ -17,26 +17,28 @@ func main() {
     }
     fmt.Println("sum:", sum)
 
-    // `range` on arrays and slices provides both the
-    // index and value for each entry. Above we didn't
-    // need the index, so we ignored it with the
-    // _blank identifier_ `_`. Sometimes we actually want
-    // the indexes though.
+    // Cuando se usa `range` en un arreglo o slice, se obtiene
+    // el valor del elemento y el índice donde se encuentra.
+    // En el ejemplo anterior no utilizamos el índice, así que
+    // lo ignoramos asignandolo a un _identificador vacío_, `_`.
+    // Sin embargo, en algunas ocasiones si vamos a necesitar los índices.
     for i, num := range nums {
         if num == 3 {
             fmt.Println("index:", i)
         }
     }
 
-    // `range` on map iterates over key/value pairs.
+    // Al utilizar `range` en un mapa, este itera por
+    // los pares llave/valor.
     kvs := map[string]string{"a": "apple", "b": "banana"}
     for k, v := range kvs {
         fmt.Printf("%s -> %s\n", k, v)
     }
 
-    // `range` on strings iterates over Unicode code
-    // points. The first value is the starting byte index
-    // of the `rune` and the second the `rune` itself.
+    // Si se utiliza `range` en una cadena, se itera por los
+    // caracteres Unicode de la misma. El primer valor es
+    // el índice del byte inicial de el primer símbolo y el
+    // símbolo mismo.
     for i, c := range "go" {
         fmt.Println(i, c)
     }
