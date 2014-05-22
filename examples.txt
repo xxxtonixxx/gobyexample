@@ -11,7 +11,7 @@ Mapas
 Range
 Funciones
 Multiples Valores de Retorno
-Variadic Functions
+Funciones Variadicas
 Closures
 Recursion
 Pointers

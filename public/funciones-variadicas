@@ -2,37 +2,24 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Variadic Functions</title>
+    <title>Go con Ejemplos: Funciones Variadicas</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
-    <div class="example" id="variadic-functions">
-      <h2><a href="./">Go by Example</a>: Variadic Functions</h2>
+    <div class="example" id="funciones-variadicas">
+      <h2><a href="./">Go con Ejemplos</a>: Funciones Variadicas</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p><a href="http://en.wikipedia.org/wiki/Variadic_function"><em>Variadic functions</em></a>
-can be called with any number of trailing arguments.
-For example, <code>fmt.Println</code> is a common variadic
-function.</p>
+            <p>Las <em>Funciones Variádicas</em> pueden ser llamadas con
+cualquier numero de argumentos. Un ejemplo común de
+una función variádica es <code>fmt.Println</code>.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -42,7 +29,7 @@ function.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/wRPLOM1VIH"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/aCuQWIdnuW"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -54,7 +41,7 @@ function.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -63,12 +50,12 @@ function.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a function that will take an arbitrary number
-of <code>ints</code> as arguments.</p>
+            <p>Aquí declaramos una función que va a recibir un numero
+arbitrario de valores tipo <code>int</code> como argumentos.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">sum</span><span class="p">(</span><span class="nx">nums</span> <span class="o">...</span><span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Print</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">)</span>
     <span class="nx">total</span> <span class="o">:=</span> <span class="mi">0</span>
@@ -87,7 +74,7 @@ of <code>ints</code> as arguments.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -96,12 +83,12 @@ of <code>ints</code> as arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>Variadic functions can be called in the usual way
-with individual arguments.</p>
+            <p>Las funciones variádicas pueden ser llamadas de la misma
+manera con valores individuales.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="nx">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
@@ -111,13 +98,13 @@ with individual arguments.</p>
         
         <tr>
           <td class="docs">
-            <p>If you already have multiple args in a slice,
-apply them to a variadic function using
-<code>func(slice...)</code> like this.</p>
+            <p>También puedes tener los argumentos en un slice
+y aplicarlos a la función variádica utilizando la forma
+<code>func(slice...)</code>:</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">nums</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
     <span class="nx">sum</span><span class="p">(</span><span class="nx">nums</span><span class="o">...</span><span class="p">)</span>
 <span class="p">}</span>
@@ -135,8 +122,8 @@ apply them to a variadic function using
             
           </td>
           <td class="code leading">
-	        
-            <div class="highlight"><pre><span class="gp">$</span> go run variadic-functions.go 
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run funciones-variadicas.go
 <span class="go">[1 2] 3</span>
 <span class="go">[1 2 3] 6</span>
 <span class="go">[1 2 3 4] 10</span>
@@ -147,12 +134,13 @@ apply them to a variadic function using
         
         <tr>
           <td class="docs">
-            <p>Another key aspect of functions in Go is their ability
-to form closures, which we&rsquo;ll look at next.</p>
+            <p>Otro aspecto clave de las funciones en Go es
+su habilidad de generar closures, lo cual
+veremos a continuación.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -161,11 +149,11 @@ to form closures, which we&rsquo;ll look at next.</p>
       
       
       <p class="next">
-        Next example: <a href="closures">Closures</a>.
+        Siguiente ejemplo: <a href="closures">Closures</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/variadic-functions">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/funciones-variadicas">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>
