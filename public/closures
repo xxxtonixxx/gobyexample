@@ -30,7 +30,7 @@ a la cual no necesariamente quieres ponerle un nombre.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/A3xO_cC80L"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/-q2PlUdh04"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -116,8 +116,8 @@ a <code>nextInt</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Para confirmar que el estado es único a esa función en particular
-creamos y probamos una nueva.</p>
+            <p>Para confirmar que el estado de la variable es único a esa
+función en particular creamos y probamos una nueva.</p>
 
           </td>
           <td class="code">

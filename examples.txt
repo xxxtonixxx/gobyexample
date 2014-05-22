@@ -14,7 +14,7 @@ Multiples Valores de Retorno
 Funciones Variadicas
 Closures
 Recursion
-Pointers
+Apuntadores
 Structs
 Methods
 Interfaces

@@ -32,8 +32,8 @@ func main() {
     fmt.Println(nextInt())
     fmt.Println(nextInt())
 
-    // Para confirmar que el estado es único a esa función en particular
-    // creamos y probamos una nueva.
+    // Para confirmar que el estado de la variable es único a esa
+    // función en particular creamos y probamos una nueva.
     newInts := intSeq()
     fmt.Println(newInts())
 }
