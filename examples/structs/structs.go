@@ -1,41 +1,40 @@
-// Go's _structs_ are typed collections of fields.
-// They're useful for grouping data together to form
-// records.
+// Los _structs_ en go son colecciones de campos con tipos específicos.
+// Son útiles para agrupar datos y formar registros.
 
 package main
 
 import "fmt"
 
-// This `person` struct type has `name` and `age` fields.
-type person struct {
-    name string
-    age  int
+// El struct `persona` tiene los campos `nombre` y edad.
+type persona struct {
+    nombre string
+    edad   int
 }
 
 func main() {
 
-    // This syntax creates a new struct.
-    fmt.Println(person{"Bob", 20})
+    // Esta sintaxis crea una instancia de un struct.
+    fmt.Println(persona{"Bob", 20})
 
-    // You can name the fields when initializing a struct.
-    fmt.Println(person{name: "Alice", age: 30})
+    // Puedes nombrear los campos cuando inicializas un struct.
+    fmt.Println(persona{name: "Alice", age: 30})
 
-    // Omitted fields will be zero-valued.
-    fmt.Println(person{name: "Fred"})
+    // Los campos omitidos serán de valor cero.
+    fmt.Println(persona{name: "Fred"})
 
-    // An `&` prefix yields a pointer to the struct.
-    fmt.Println(&person{name: "Ann", age: 40})
+    // El prefijo `&` devuelve el apuntador a un struct.
+    fmt.Println(&persona{name: "Ann", age: 40})
 
-    // Access struct fields with a dot.
+    // Puedes acceder a los campos del struct con un punto.
     s := person{name: "Sean", age: 50}
     fmt.Println(s.name)
 
-    // You can also use dots with struct pointers - the
-    // pointers are automatically dereferenced.
+    // También puedes usar puntos con apuntadores a struct -
+    // los apuntadores son automáticamente dereferenciados.
     sp := &s
     fmt.Println(sp.age)
 
-    // Structs are mutable.
+    // los Structs son inmutables.
     sp.age = 51
     fmt.Println(sp.age)
 }
