@@ -10,7 +10,7 @@ Slices
 Mapas
 Range
 Funciones
-Multiple Return Values
+Multiples Valores de Retorno
 Variadic Functions
 Closures
 Recursion
