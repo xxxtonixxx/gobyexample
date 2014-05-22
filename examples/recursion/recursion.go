@@ -1,13 +1,11 @@
-// Go supports
-// <a href="http://en.wikipedia.org/wiki/Recursion_(computer_science)"><em>recursive functions</em></a>.
-// Here's a classic factorial example.
+// Go soporta
+// <a href="http://es.wikipedia.org/wiki/Recursión_(ciencias_de_computación)"><em>funciones recursivas</em></a>.
+// Aquí tenemos un ejemplo clásico para calcular un factorial.
 
 package main
 
-import "fmt"
-
-// This `fact` function calls itself until it reaches the
-// base case of `fact(0)`.
+// Esta función `fact` se llama a si misma hasta que llega a la
+// base de `fact(0)`.
 func fact(n int) int {
     if n == 0 {
         return 1
@@ -16,5 +14,5 @@ func fact(n int) int {
 }
 
 func main() {
-    fmt.Println(fact(7))
+    ft.Println(fact(7))
 }
