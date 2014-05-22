@@ -2,34 +2,22 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Methods</title>
+    <title>Go con Ejemplos: Metodos</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
-    <div class="example" id="methods">
-      <h2><a href="./">Go by Example</a>: Methods</h2>
+    <div class="example" id="metodos">
+      <h2><a href="./">Go con Ejemplos</a>: Metodos</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go supports <em>methods</em> defined on struct types.</p>
+            <p>Go soporta definir <em>métodos</em> para structs.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -39,7 +27,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/254m_9Yjwa"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/tYxsXGp3Hq"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -51,7 +39,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -63,7 +51,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">type</span> <span class="nx">rect</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span> <span class="kt">int</span>
 <span class="p">}</span>
@@ -74,11 +62,11 @@
         
         <tr>
           <td class="docs">
-            <p>This <code>area</code> method has a <em>receiver type</em> of <code>*rect</code>.</p>
+            <p>Este método <code>area</code> tiene un <em>tipo receptor</em> <code>*rect</code>.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">rect</span><span class="p">)</span> <span class="nx">area</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">width</span> <span class="o">*</span> <span class="nx">r</span><span class="p">.</span><span class="nx">height</span>
 <span class="p">}</span>
@@ -89,12 +77,13 @@
         
         <tr>
           <td class="docs">
-            <p>Methods can be defined for either pointer or value
-receiver types. Here&rsquo;s an example of a value receiver.</p>
+            <p>Los métodos pueden ser definidos para receptores de tipo
+apuntador o por valor. Aquí un ejemplo de un receptor
+por valor.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="nx">rect</span><span class="p">)</span> <span class="nx">perim</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span>
     <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="nx">r</span><span class="p">.</span><span class="nx">width</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="nx">r</span><span class="p">.</span><span class="nx">height</span>
 <span class="p">}</span>
@@ -108,7 +97,7 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">r</span> <span class="o">:=</span> <span class="nx">rect</span><span class="p">{</span><span class="nx">width</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nx">height</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 </pre></div>
@@ -118,11 +107,11 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we call the 2 methods defined for our struct.</p>
+            <p>Aquí llamamos a los dos métodos definidos para nuestro struct.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;area: &quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">area</span><span class="p">())</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;perim:&quot;</span><span class="p">,</span> <span class="nx">r</span><span class="p">.</span><span class="nx">perim</span><span class="p">())</span>
 </pre></div>
@@ -132,15 +121,15 @@ receiver types. Here&rsquo;s an example of a value receiver.</p>
         
         <tr>
           <td class="docs">
-            <p>Go automatically handles conversion between values
-and pointers for method calls. You may want to use
-a pointer receiver type to avoid copying on method
-calls or to allow the method to mutate the
-receiving struct.</p>
+            <p>Go automáticamente maneja la conversión entre valores
+y apuntadores en las llamadas a métodos. Puede que
+quieras utilizar un tipo apuntador receptor para evitar copiar
+en las llamadas a métodos o permitir que el método cambie
+el struct receptor.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">rp</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">r</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;area: &quot;</span><span class="p">,</span> <span class="nx">rp</span><span class="p">.</span><span class="nx">area</span><span class="p">())</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;perim:&quot;</span><span class="p">,</span> <span class="nx">rp</span><span class="p">.</span><span class="nx">perim</span><span class="p">())</span>
@@ -159,8 +148,8 @@ receiving struct.</p>
             
           </td>
           <td class="code leading">
-	        
-            <div class="highlight"><pre><span class="gp">$</span> go run methods.go 
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run methods.go
 <span class="go">area:  50</span>
 <span class="go">perim: 30</span>
 <span class="go">area:  50</span>
@@ -172,12 +161,13 @@ receiving struct.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at Go&rsquo;s mechanism for grouping and
-naming related sets of methods: interfaces.</p>
+            <p>A continuación veremos el mecanismo de Go para agrupar
+y nombrar colecciones relacionadas
+de métodos: interfaces.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -186,11 +176,11 @@ naming related sets of methods: interfaces.</p>
       
       
       <p class="next">
-        Next example: <a href="interfaces">Interfaces</a>.
+        Siguiente ejemplo: <a href="interfaces">Interfaces</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/methods">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/metodos">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

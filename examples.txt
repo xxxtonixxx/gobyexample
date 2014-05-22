@@ -16,7 +16,7 @@ Closures
 Recursion
 Apuntadores
 Structs
-Methods
+Metodos
 Interfaces
 Errors
 Goroutines
