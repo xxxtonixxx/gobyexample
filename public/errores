@@ -2,41 +2,30 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Errors</title>
+    <title>Go con Ejemplos: Errores</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
-    <div class="example" id="errors">
-      <h2><a href="./">Go by Example</a>: Errors</h2>
+    <div class="example" id="errores">
+      <h2><a href="./">Go con Ejemplos</a>: Errores</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>In Go it&rsquo;s idiomatic to communicate errors via an
-explicit, separate return value. This contrasts with
-the exceptions used in languages like Java and Ruby and
-the overloaded single result / error value sometimes
-used in C. Go&rsquo;s approach makes it easy to see which
-functions return errors and to handle them using the
-same language constructs employed for any other,
-non-error tasks.</p>
+            <p>En Go es idiomatico comunicar errores a través de
+un valor de retorno separado.
+Esto contrasta con las excepciones usadas en lenguajes
+como Java y Ruby y sobrecargar el resultado como en
+ocasiones se hace en C.
+Con la manera en que se hace en Go es más facil ver
+cuales funciones regresan errores y manejarlos utilizando
+las mismas estructuras de control como lo hacemos con
+todas las demás tareas.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -46,7 +35,7 @@ non-error tasks.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/BmDQXkPPTk"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/gdxr_LEpkH"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -58,7 +47,7 @@ non-error tasks.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;errors&quot;</span>
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
@@ -68,12 +57,13 @@ non-error tasks.</p>
         
         <tr>
           <td class="docs">
-            <p>By convention, errors are the last return value and
-have type <code>error</code>, a built-in interface.</p>
+            <p>Por convención, los errores siempre son el último valor
+que se regresa y son de tipo <code>error</code>, una interfaz que
+es parte del lenguaje.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">arg</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
 </pre></div>
@@ -83,12 +73,12 @@ have type <code>error</code>, a built-in interface.</p>
         
         <tr>
           <td class="docs">
-            <p><code>errors.New</code> constructs a basic <code>error</code> value
-with the given error message.</p>
+            <p><code>errors.New</code> construye un valor de <code>error</code> básico
+con el mensaje proporcionado.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="nx">errors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="s">&quot;can&#39;t work with 42&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -100,7 +90,7 @@ with the given error message.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="p">}</span>
 </pre></div>
 
@@ -109,12 +99,12 @@ with the given error message.</p>
         
         <tr>
           <td class="docs">
-            <p>A nil value in the error position indicates that
-there was no error.</p>
+            <p>Un valor nulo en la posición de error indica que no hubo
+ningún problema.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
 <span class="p">}</span>
 </pre></div>
@@ -124,14 +114,14 @@ there was no error.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s possible to use custom types as <code>error</code>s by
-implementing the <code>Error()</code> method on them. Here&rsquo;s a
-variant on the example above that uses a custom type
-to explicitly represent an argument error.</p>
+            <p>Es posible usar tipos personalizados como <code>error</code> simplemente
+implementando el método <code>Error()</code> en ellos. Aquí una
+variante de el ejemplo anterior que utiliza un tipo personalizado
+para representar explícitamente un error de argumentos.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">type</span> <span class="nx">argError</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">arg</span>  <span class="kt">int</span>
     <span class="nx">prob</span> <span class="kt">string</span>
@@ -146,7 +136,7 @@ to explicitly represent an argument error.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="p">(</span><span class="nx">e</span> <span class="o">*</span><span class="nx">argError</span><span class="p">)</span> <span class="nx">Error</span><span class="p">()</span> <span class="kt">string</span> <span class="p">{</span>
     <span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Sprintf</span><span class="p">(</span><span class="s">&quot;%d - %s&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">arg</span><span class="p">,</span> <span class="nx">e</span><span class="p">.</span><span class="nx">prob</span><span class="p">)</span>
 <span class="p">}</span>
@@ -160,7 +150,7 @@ to explicitly represent an argument error.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f2</span><span class="p">(</span><span class="nx">arg</span> <span class="kt">int</span><span class="p">)</span> <span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">arg</span> <span class="o">==</span> <span class="mi">42</span> <span class="p">{</span>
 </pre></div>
@@ -170,13 +160,13 @@ to explicitly represent an argument error.</p>
         
         <tr>
           <td class="docs">
-            <p>In this case we use <code>&amp;argError</code> syntax to build
-a new struct, supplying values for the two
-fields <code>arg</code> and <code>prob</code>.</p>
+            <p>En este caso usamos la sintaxis <code>&amp;argError</code> para
+construir un struct nuevo, proporcionando los valores
+de los dos campos <code>arg</code> y <code>prob</code>.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">argError</span><span class="p">{</span><span class="nx">arg</span><span class="p">,</span> <span class="s">&quot;can&#39;t work with it&quot;</span><span class="p">}</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">arg</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="kc">nil</span>
@@ -191,7 +181,7 @@ fields <code>arg</code> and <code>prob</code>.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -200,14 +190,14 @@ fields <code>arg</code> and <code>prob</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>The two loops below test out each of our
-error-returning functions. Note that the use of an
-inline error check on the <code>if</code> line is a common
-idiom in Go code.</p>
+            <p>Estos dos ciclos prueban cada una de nuestras
+funciones. Nota que el uso de la revisión de errores
+en una sola linea de <code>if</code> es un estilo común en
+código de Go.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">i</span> <span class="o">:=</span> <span class="k">range</span> <span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">7</span><span class="p">,</span> <span class="mi">42</span><span class="p">}</span> <span class="p">{</span>
         <span class="k">if</span> <span class="nx">r</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f1</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
             <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;f1 failed:&quot;</span><span class="p">,</span> <span class="nx">e</span><span class="p">)</span>
@@ -229,14 +219,14 @@ idiom in Go code.</p>
         
         <tr>
           <td class="docs">
-            <p>If you want to programmatically use the data in
-a custom error, you&rsquo;ll need to get the error  as an
-instance of the custom error type via type
-assertion.</p>
+            <p>Si quieres usar la información que es parte de un error personalizado
+programáticamente, vas a necesitar asignar el error a una
+una instancia de el tipo personalizado de error por medio de la
+aserción de tipo.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">_</span><span class="p">,</span> <span class="nx">e</span> <span class="o">:=</span> <span class="nx">f2</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
     <span class="k">if</span> <span class="nx">ae</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">e</span><span class="p">.(</span><span class="o">*</span><span class="nx">argError</span><span class="p">);</span> <span class="nx">ok</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ae</span><span class="p">.</span><span class="nx">arg</span><span class="p">)</span>
@@ -257,7 +247,7 @@ assertion.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run errors.go
 <span class="go">f1 worked: 10</span>
 <span class="go">f1 failed: can&#39;t work with 42</span>
@@ -272,12 +262,13 @@ assertion.</p>
         
         <tr>
           <td class="docs">
-            <p>See this <a href="http://blog.golang.org/2011/07/error-handling-and-go.html">great post</a>
-on the Go blog for more on error handling.</p>
+            <p>Puedes leer este <a href="http://blog.golang.org/2011/07/error-handling-and-go.html">excelente post</a>
+en el blog de Go para más detalles
+de manejo de errores.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -286,11 +277,11 @@ on the Go blog for more on error handling.</p>
       
       
       <p class="next">
-        Next example: <a href="goroutines">Goroutines</a>.
+        Siguiente ejemplo: <a href="goroutines">Goroutines</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/errors">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/errores">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

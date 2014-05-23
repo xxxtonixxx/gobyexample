@@ -18,7 +18,7 @@ Apuntadores
 Structs
 Metodos
 Interfaces
-Errors
+Errores
 Goroutines
 Channels
 Channel Buffering
