@@ -20,7 +20,7 @@ Metodos
 Interfaces
 Errores
 Goroutines
-Channels
+Canales
 Channel Buffering
 Channel Synchronization
 Channel Directions
