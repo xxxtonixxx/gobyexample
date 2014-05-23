@@ -22,7 +22,7 @@ Errores
 Goroutines
 Canales
 Buffering de Canales
-Channel Synchronization
+Sincronizacion de Canales
 Channel Directions
 Select
 Timeouts
