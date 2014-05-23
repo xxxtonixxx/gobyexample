@@ -1,23 +1,23 @@
-## Go by Example
+## Go con Ejemplos
 
-Content, toolchain, and web server for [Go by Example](https://gobyexample.com).
+Contenido, herramientas y el web server de el sitio
+[Go con Ejemplos](http://goconejemplos.com).
 
+### Información General
 
-### Overview
+El sitio de Go con Ejemplos se construye extrayendo el
+código y los comentarios de los archivos fuente en el
+folder `examples` y mostrando esa información en el sitio
+usando `templates`. Los programas que implementan
+este proceso están en `tools`.
 
-The Go by Example site is built by extracting code &
-comments from source files in `examples` and rendering
-that data via the site `templates`. The programs
-implementing this build process are in `tools`.
+El proceso produce un directorio de archivos estáticos - `public` - perfecto
+para ser servido por cualquier servidor HTTP moderno. Aparte,
+se incluye un servidor lugero de Go en `server.go`.
 
-The build process produces a directory of static files -
-`public` - suitable for serving by any modern HTTP server.
-We include a lightweight Go server in `server.go`.
+### Compilar
 
-
-### Building
-
-To build the site:
+Para compilar el sitio:
 
 ```console
 $ go get github.com/russross/blackfriday
@@ -25,14 +25,14 @@ $ tools/build
 $ open public/index.html
 ```
 
-To build continuously in a loop:
+Para compilar constantemente en un ciclo:
 
 ```console
 $ tools/build-loop
 ```
 
 
-### Local Deploy
+### Deploy Local
 
 ```bash
 $ mkdir -p $GOPATH/src/github.com/mmcgrana
@@ -45,7 +45,7 @@ $ foreman open
 ```
 
 
-### Platform Deploy
+### Deploy en Heroku
 
 Basic setup:
 
@@ -63,7 +63,7 @@ $ git push $DEPLOY master
 $ heroku open -a $APP
 ```
 
-Add a domain + SSL:
+Agregar un dominio + SSL:
 
 ```bash
 $ heroku domains:add $DOMAIN
@@ -79,7 +79,6 @@ $ heroku config:add CANONICAL_HOST=$DOMAIN -r $DEPLOY
 $ heroku open -r $DEPLOY
 ```
 
-
 ### License
 
 This work is copyright Mark McGranaghan and licensed under a
@@ -89,15 +88,15 @@ The Go Gopher is copyright [Renée French](http://reneefrench.blogspot.com/) and
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/).
 
 
-### Translations
+### Traducciones
 
-Contributor translations of the Go by Example site are available in:
+Algunas traducciones hechas por contribuidores:
 
-* [Chinese](http://everyx.github.io/gobyexample/) by [everyx](https://github.com/everyx)
+* [Chino](http://everyx.github.io/gobyexample/) by [everyx](https://github.com/everyx)
 
 
-### Thanks
+### Gracias
 
-Thanks to [Jeremy Ashkenas](https://github.com/jashkenas)
-for [Docco](http://jashkenas.github.com/docco/), which
-inspired this project.
+Gracias a [Jeremy Ashkenas](https://github.com/jashkenas)
+por [Docco](http://jashkenas.github.com/docco/), lo que
+inspiró este proyecto.
