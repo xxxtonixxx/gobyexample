@@ -2,24 +2,22 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Writing Files</title>
+    <title>Go con Ejemplos: Writing Files</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
   </script>
   <body>
     <div class="example" id="writing-files">
-      <h2><a href="./">Go by Example</a>: Writing Files</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Writing Files</h2>
       
       <table>
         
@@ -30,7 +28,7 @@ ones we saw earlier for reading.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -40,7 +38,7 @@ ones we saw earlier for reading.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/5usz1Oc-xY"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/5usz1Oc-xY"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -52,7 +50,7 @@ ones we saw earlier for reading.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;bufio&quot;</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -69,7 +67,7 @@ ones we saw earlier for reading.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">check</span><span class="p">(</span><span class="nx">e</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="nx">e</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
         <span class="nb">panic</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
@@ -85,7 +83,7 @@ ones we saw earlier for reading.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -94,12 +92,12 @@ ones we saw earlier for reading.</p>
         
         <tr>
           <td class="docs">
-            <p>To start, here&rsquo;s how to dump a string (or just
+            <p>To start, here’s how to dump a string (or just
 bytes) into a file.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">d1</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&quot;hello\ngo\n&quot;</span><span class="p">)</span>
     <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">WriteFile</span><span class="p">(</span><span class="s">&quot;/tmp/dat1&quot;</span><span class="p">,</span> <span class="nx">d1</span><span class="p">,</span> <span class="mo">0644</span><span class="p">)</span>
     <span class="nx">check</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
@@ -114,7 +112,7 @@ bytes) into a file.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">f</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Create</span><span class="p">(</span><span class="s">&quot;/tmp/dat2&quot;</span><span class="p">)</span>
     <span class="nx">check</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 </pre></div>
@@ -124,12 +122,12 @@ bytes) into a file.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s idiomatic to defer a <code>Close</code> immediately
+            <p>It’s idiomatic to defer a <code>Close</code> immediately
 after opening a file.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">defer</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
 </pre></div>
 
@@ -138,11 +136,11 @@ after opening a file.</p>
         
         <tr>
           <td class="docs">
-            <p>You can <code>Write</code> byte slices as you&rsquo;d expect.</p>
+            <p>You can <code>Write</code> byte slices as you’d expect.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">d2</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">{</span><span class="mi">115</span><span class="p">,</span> <span class="mi">111</span><span class="p">,</span> <span class="mi">109</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">10</span><span class="p">}</span>
     <span class="nx">n2</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">Write</span><span class="p">(</span><span class="nx">d2</span><span class="p">)</span>
     <span class="nx">check</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
@@ -158,7 +156,7 @@ after opening a file.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">n3</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">f</span><span class="p">.</span><span class="nx">WriteString</span><span class="p">(</span><span class="s">&quot;writes\n&quot;</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;wrote %d bytes\n&quot;</span><span class="p">,</span> <span class="nx">n3</span><span class="p">)</span>
 </pre></div>
@@ -172,7 +170,7 @@ after opening a file.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">f</span><span class="p">.</span><span class="nx">Sync</span><span class="p">()</span>
 </pre></div>
 
@@ -186,7 +184,7 @@ to the buffered readers we saw earlier.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">w</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nx">NewWriter</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
     <span class="nx">n4</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">w</span><span class="p">.</span><span class="nx">WriteString</span><span class="p">(</span><span class="s">&quot;buffered\n&quot;</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;wrote %d bytes\n&quot;</span><span class="p">,</span> <span class="nx">n4</span><span class="p">)</span>
@@ -202,7 +200,7 @@ been applied to the underlying writer.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">w</span><span class="p">.</span><span class="nx">Flush</span><span class="p">()</span>
 </pre></div>
 
@@ -214,7 +212,7 @@ been applied to the underlying writer.</p>
             
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre><span class="p">}</span>
 </pre></div>
 
@@ -231,7 +229,7 @@ been applied to the underlying writer.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run writing-files.go 
 <span class="go">wrote 5 bytes</span>
 <span class="go">wrote 7 bytes</span>
@@ -247,7 +245,7 @@ been applied to the underlying writer.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> cat /tmp/dat1
 <span class="go">hello</span>
 <span class="go">go</span>
@@ -262,12 +260,12 @@ been applied to the underlying writer.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at applying some of the file I/O ideas
-we&rsquo;ve just seen to the <code>stdin</code> and <code>stdout</code> streams.</p>
+            <p>Next we’ll look at applying some of the file I/O ideas
+we’ve just seen to the <code>stdin</code> and <code>stdout</code> streams.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -276,7 +274,7 @@ we&rsquo;ve just seen to the <code>stdin</code> and <code>stdout</code> streams.
       
       
       <p class="next">
-        Next example: <a href="line-filters">Line Filters</a>.
+        Siguiente ejemplo: <a href="line-filters">Line Filters</a>.
       </p>
       
       <p class="footer">

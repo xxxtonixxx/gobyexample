@@ -2,24 +2,22 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Timeouts</title>
+    <title>Go con Ejemplos: Timeouts</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
   </script>
   <body>
     <div class="example" id="timeouts">
-      <h2><a href="./">Go by Example</a>: Timeouts</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Timeouts</h2>
       
       <table>
         
@@ -32,7 +30,7 @@ elegant thanks to channels and <code>select</code>.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -42,7 +40,7 @@ elegant thanks to channels and <code>select</code>.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/CoBnJiRyx3"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/CoBnJiRyx3"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -54,7 +52,7 @@ elegant thanks to channels and <code>select</code>.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;time&quot;</span>
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
@@ -67,7 +65,7 @@ elegant thanks to channels and <code>select</code>.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -76,13 +74,13 @@ elegant thanks to channels and <code>select</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>For our example, suppose we&rsquo;re executing an external
+            <p>For our example, suppose we’re executing an external
 call that returns its result on a channel <code>c1</code>
 after 2s.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">c1</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
@@ -95,16 +93,16 @@ after 2s.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the <code>select</code> implementing a timeout.
+            <p>Here’s the <code>select</code> implementing a timeout.
 <code>res := &lt;-c1</code> awaits the result and <code>&lt;-Time.After</code>
 awaits a value to be sent after the timeout of
 1s. Since <code>select</code> proceeds with the first
-receive that&rsquo;s ready, we&rsquo;ll take the timeout case
+receive that’s ready, we’ll take the timeout case
 if the operation takes more than the allowed 1s.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">select</span> <span class="p">{</span>
     <span class="k">case</span> <span class="nx">res</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">c1</span><span class="p">:</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
@@ -119,11 +117,11 @@ if the operation takes more than the allowed 1s.</p>
         <tr>
           <td class="docs">
             <p>If we allow a longer timeout of 3s, then the receive
-from <code>c2</code> will succeed and we&rsquo;ll print the result.</p>
+from <code>c2</code> will succeed and we’ll print the result.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">c2</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
         <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
@@ -152,7 +150,7 @@ out and the second succeeding.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run timeouts.go 
 <span class="go">timeout 1</span>
 <span class="go">result 2</span>
@@ -166,12 +164,12 @@ out and the second succeeding.</p>
             <p>Using this <code>select</code> timeout pattern requires
 communicating results over channels. This is a good
 idea in general because other important Go features are
-based on channels and <code>select</code>. We&rsquo;ll look at two
+based on channels and <code>select</code>. We’ll look at two
 examples of this next: timers and tickers.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -180,7 +178,7 @@ examples of this next: timers and tickers.</p>
       
       
       <p class="next">
-        Next example: <a href="non-blocking-channel-operations">Non-Blocking Channel Operations</a>.
+        Siguiente ejemplo: <a href="non-blocking-channel-operations">Non-Blocking Channel Operations</a>.
       </p>
       
       <p class="footer">

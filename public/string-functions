@@ -2,36 +2,34 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: String Functions</title>
+    <title>Go con Ejemplos: String Functions</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
   </script>
   <body>
     <div class="example" id="string-functions">
-      <h2><a href="./">Go by Example</a>: String Functions</h2>
+      <h2><a href="./">Go con Ejemplos</a>: String Functions</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>The standard library&rsquo;s <code>strings</code> package provides many
+            <p>The standard library’s <code>strings</code> package provides many
 useful string-related functions. Here are some examples
 to give you a sense of the package.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -41,7 +39,7 @@ to give you a sense of the package.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/COXm374QWe"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/COXm374QWe"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -53,7 +51,7 @@ to give you a sense of the package.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="nx">s</span> <span class="s">&quot;strings&quot;</span>
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
@@ -63,12 +61,12 @@ to give you a sense of the package.</p>
         
         <tr>
           <td class="docs">
-            <p>We alias <code>fmt.Println</code> to a shorter name as we&rsquo;ll use
+            <p>We alias <code>fmt.Println</code> to a shorter name as we’ll use
 it a lot below.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">var</span> <span class="nx">p</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span>
 </pre></div>
 
@@ -80,7 +78,7 @@ it a lot below.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -89,7 +87,7 @@ it a lot below.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s a sample of the functions available in
+            <p>Here’s a sample of the functions available in
 <code>strings</code>. Note that these are all functions from
 package, not methods on the string object itself.
 This means that we need pass the string in question
@@ -97,7 +95,7 @@ as the first argument to the function.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Contains:  &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Contains</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;es&quot;</span><span class="p">))</span>
     <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Count:     &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">Count</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;t&quot;</span><span class="p">))</span>
     <span class="nx">p</span><span class="p">(</span><span class="s">&quot;HasPrefix: &quot;</span><span class="p">,</span> <span class="nx">s</span><span class="p">.</span><span class="nx">HasPrefix</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">,</span> <span class="s">&quot;te&quot;</span><span class="p">))</span>
@@ -123,7 +121,7 @@ package docs.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -136,7 +134,7 @@ and getting a character by index.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Len: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="s">&quot;hello&quot;</span><span class="p">))</span>
     <span class="nx">p</span><span class="p">(</span><span class="s">&quot;Char:&quot;</span><span class="p">,</span> <span class="s">&quot;hello&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="p">}</span>
@@ -154,7 +152,7 @@ and getting a character by index.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run string-functions.go
 <span class="go">Contains:   true</span>
 <span class="go">Count:      2</span>
@@ -178,7 +176,7 @@ and getting a character by index.</p>
             
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre><span class="go">Len:  5</span>
 <span class="go">Char: 101</span>
 </pre></div>
@@ -190,7 +188,7 @@ and getting a character by index.</p>
       
       
       <p class="next">
-        Next example: <a href="string-formatting">String Formatting</a>.
+        Siguiente ejemplo: <a href="string-formatting">String Formatting</a>.
       </p>
       
       <p class="footer">

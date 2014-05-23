@@ -2,37 +2,35 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Range over Channels</title>
+    <title>Go con Ejemplos: Range over Channels</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
   </script>
   <body>
     <div class="example" id="range-over-channels">
-      <h2><a href="./">Go by Example</a>: Range over Channels</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Range over Channels</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>In a <a href="range">previous</a> example we saw how <code>for</code> and
+            <p>In a <a>previous</a> example we saw how <code>for</code> and
 <code>range</code> provide iteration over basic data structures.
 We can also use this syntax to iterate over
 values received from a channel.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -42,7 +40,7 @@ values received from a channel.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/WN7NNh9tvh"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/WN7NNh9tvh"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -54,7 +52,7 @@ values received from a channel.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -66,7 +64,7 @@ values received from a channel.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -75,11 +73,11 @@ values received from a channel.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll iterate over 2 values in the <code>queue</code> channel.</p>
+            <p>We’ll iterate over 2 values in the <code>queue</code> channel.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">queue</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="nx">queue</span> <span class="o">&lt;-</span> <span class="s">&quot;one&quot;</span>
     <span class="nx">queue</span> <span class="o">&lt;-</span> <span class="s">&quot;two&quot;</span>
@@ -91,15 +89,15 @@ values received from a channel.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>range</code> iterates over each element as it&rsquo;s
+            <p>This <code>range</code> iterates over each element as it’s
 received from <code>queue</code>. Because we <code>close</code>d the
 channel above, the iteration terminates after
-receiving the 2 elements. If we didn&rsquo;t <code>close</code> it
-we&rsquo;d block on a 3rd receive in the loop.</p>
+receiving the 2 elements. If we didn’t <code>close</code> it
+we’d block on a 3rd receive in the loop.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">elem</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">queue</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">elem</span><span class="p">)</span>
     <span class="p">}</span>
@@ -118,7 +116,7 @@ we&rsquo;d block on a 3rd receive in the loop.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run range-over-channels.go
 <span class="go">one</span>
 <span class="go">two</span>
@@ -129,13 +127,13 @@ we&rsquo;d block on a 3rd receive in the loop.</p>
         
         <tr>
           <td class="docs">
-            <p>This example also showed that it&rsquo;s possible to close
+            <p>This example also showed that it’s possible to close
 a non-empty channel but still have the remaining
 values be received.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -144,7 +142,7 @@ values be received.</p>
       
       
       <p class="next">
-        Next example: <a href="timers">Timers</a>.
+        Siguiente ejemplo: <a href="timers">Timers</a>.
       </p>
       
       <p class="footer">

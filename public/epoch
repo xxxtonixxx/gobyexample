@@ -2,24 +2,22 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Epoch</title>
+    <title>Go con Ejemplos: Epoch</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
   </script>
   <body>
     <div class="example" id="epoch">
-      <h2><a href="./">Go by Example</a>: Epoch</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Epoch</h2>
       
       <table>
         
@@ -28,11 +26,11 @@
             <p>A common requirement in programs is getting the number
 of seconds, milliseconds, or nanoseconds since the
 <a href="http://en.wikipedia.org/wiki/Unix_time">Unix epoch</a>.
-Here&rsquo;s how to do it in Go.</p>
+Here’s how to do it in Go.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -42,7 +40,7 @@ Here&rsquo;s how to do it in Go.</p>
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/GP_zEjhlWk"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/GP_zEjhlWk"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -54,7 +52,7 @@ Here&rsquo;s how to do it in Go.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 <span class="kn">import</span> <span class="s">&quot;time&quot;</span>
 </pre></div>
@@ -67,7 +65,7 @@ Here&rsquo;s how to do it in Go.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -82,7 +80,7 @@ nanoseconds, respectively.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">now</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span>
     <span class="nx">secs</span> <span class="o">:=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">Unix</span><span class="p">()</span>
     <span class="nx">nanos</span> <span class="o">:=</span> <span class="nx">now</span><span class="p">.</span><span class="nx">UnixNano</span><span class="p">()</span>
@@ -95,12 +93,12 @@ nanoseconds, respectively.</p>
         <tr>
           <td class="docs">
             <p>Note that there is no <code>UnixMillis</code>, so to get the
-milliseconds since epoch you&rsquo;ll need to manually
+milliseconds since epoch you’ll need to manually
 divide from nanoseconds.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">millis</span> <span class="o">:=</span> <span class="nx">nanos</span> <span class="o">/</span> <span class="mi">1000000</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">secs</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">millis</span><span class="p">)</span>
@@ -117,7 +115,7 @@ since the epoch into the corresponding <code>time</code>.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Unix</span><span class="p">(</span><span class="nx">secs</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Unix</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">nanos</span><span class="p">))</span>
 <span class="p">}</span>
@@ -135,7 +133,7 @@ since the epoch into the corresponding <code>time</code>.</p>
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run epoch.go 
 <span class="go">2012-10-31 16:13:58.292387 +0000 UTC</span>
 <span class="go">1351700038</span>
@@ -150,12 +148,12 @@ since the epoch into the corresponding <code>time</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at another time-related task: time
+            <p>Next we’ll look at another time-related task: time
 parsing and formatting.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -164,7 +162,7 @@ parsing and formatting.</p>
       
       
       <p class="next">
-        Next example: <a href="time-formatting-parsing">Time Formatting / Parsing</a>.
+        Siguiente ejemplo: <a href="time-formatting-parsing">Time Formatting / Parsing</a>.
       </p>
       
       <p class="footer">
