@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Channel Buffering</title>
+    <title>Go con Ejemplos: Buffering de Canales</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,19 +16,19 @@
 
   </script>
   <body>
-    <div class="example" id="channel-buffering">
-      <h2><a href="./">Go con Ejemplos</a>: Channel Buffering</h2>
+    <div class="example" id="buffering-de-canales">
+      <h2><a href="./">Go con Ejemplos</a>: Buffering de Canales</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>By default channels are <em>unbuffered</em>, meaning that they
-will only accept sends (<code>chan &lt;-</code>) if there is a
-corresponding receive (<code>&lt;- chan</code>) ready to receive the
-sent value. <em>Buffered channels</em> accept a limited
-number of  values without a corresponding receiver for
-those values.</p>
+            <p>Por defecto, los canales no utilizan un buffer, lo que
+signifca que solo aceptan envíos (<code>chan &lt;-</code>) is hay un
+receptor correspondiente (<code>&lt;- chan</code>) listo para recibir
+el valor enviado. Los canales <em>con buffer</em> pueden aceptar
+un numero limitado de valores sin un receptor correspondiente
+para esos valores.</p>
 
           </td>
           <td class="code empty leading">
@@ -42,7 +42,7 @@ those values.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/34PVHwO6Bn"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/P3XvkbDCb1"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -75,13 +75,13 @@ those values.</p>
         
         <tr>
           <td class="docs">
-            <p>Here we <code>make</code> a channel of strings buffering up to
-2 values.</p>
+            <p>Aquí creamos un canal de cadenas con buffer para hasta
+dos valores.</p>
 
           </td>
           <td class="code leading">
           
-            <div class="highlight"><pre>    <span class="nx">messages</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">mensajes</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -89,15 +89,14 @@ those values.</p>
         
         <tr>
           <td class="docs">
-            <p>Because this channel is buffered, we can send these
-values into the channel without a corresponding
-concurrent receive.</p>
+            <p>Como este canal utiliza un buffer, podemos enviar estos
+valores al mismo sin un receptor correspondiente.</p>
 
           </td>
           <td class="code leading">
           
-            <div class="highlight"><pre>    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;buffered&quot;</span>
-    <span class="nx">messages</span> <span class="o">&lt;-</span> <span class="s">&quot;channel&quot;</span>
+            <div class="highlight"><pre>    <span class="nx">mensajes</span> <span class="o">&lt;-</span> <span class="s">&quot;buffered&quot;</span>
+    <span class="nx">mensajes</span> <span class="o">&lt;-</span> <span class="s">&quot;channel&quot;</span>
 </pre></div>
 
           </td>
@@ -105,13 +104,13 @@ concurrent receive.</p>
         
         <tr>
           <td class="docs">
-            <p>Later we can receive these two values as usual.</p>
+            <p>Más adelante, podemos recibir estos dos valores.</p>
 
           </td>
           <td class="code">
           
-            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">messages</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">mensajes</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">mensajes</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -128,7 +127,7 @@ concurrent receive.</p>
           </td>
           <td class="code">
           
-            <div class="highlight"><pre><span class="gp">$</span> go run channel-buffering.go 
+            <div class="highlight"><pre><span class="gp">$</span> go run buffering-de-canales.go
 <span class="go">buffered</span>
 <span class="go">channel</span>
 </pre></div>
@@ -144,7 +143,7 @@ concurrent receive.</p>
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/channel-buffering">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/buffering-de-canales">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

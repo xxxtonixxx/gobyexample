@@ -21,7 +21,7 @@ Interfaces
 Errores
 Goroutines
 Canales
-Channel Buffering
+Buffering de Canales
 Channel Synchronization
 Channel Directions
 Select
