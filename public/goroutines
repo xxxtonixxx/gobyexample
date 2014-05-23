@@ -2,34 +2,22 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go by Example: Goroutines</title>
+    <title>Go con Ejemplos: Goroutines</title>
     <link rel=stylesheet href="site.css">
   </head>
-  <script type="text/javascript">
-    if (window.location.host == "gobyexample.com") {
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-34996217-1']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    }
-  </script>
   <body>
     <div class="example" id="goroutines">
-      <h2><a href="./">Go by Example</a>: Goroutines</h2>
+      <h2><a href="./">Go con Ejemplos</a>: Goroutines</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>A <em>goroutine</em> is a lightweight thread of execution.</p>
+            <p>Una <em>goroutine</em> es un hilo o thread de ejecución ligero.</p>
 
           </td>
           <td class="code empty leading">
-	        
+          
             
           </td>
         </tr>
@@ -39,7 +27,7 @@
             
           </td>
           <td class="code leading">
-	        <a href="http://play.golang.org/p/aIO_Wi3hJj"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/mUsxJdYxvX"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -51,7 +39,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 </pre></div>
 
@@ -63,7 +51,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">f</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">from</span><span class="p">,</span> <span class="s">&quot;:&quot;</span><span class="p">,</span> <span class="nx">i</span><span class="p">)</span>
@@ -79,7 +67,7 @@
             
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
 </pre></div>
 
@@ -88,13 +76,13 @@
         
         <tr>
           <td class="docs">
-            <p>Suppose we have a function call <code>f(s)</code>. Here&rsquo;s how
-we&rsquo;d call that in the usual way, running it
-synchronously.</p>
+            <p>Supongamos que tenemos una llamada a la función
+<code>f(s)</code>. Así es como la llamaríamos de la manera
+tradicional, o de manera síncrona.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="nx">f</span><span class="p">(</span><span class="s">&quot;direct&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -103,13 +91,13 @@ synchronously.</p>
         
         <tr>
           <td class="docs">
-            <p>To invoke this function in a goroutine, use
-<code>go f(s)</code>. This new goroutine will execute
-concurrently with the calling one.</p>
+            <p>Para llamar esta función en una goroutine, usamos
+<code>go f(s)</code>. Esta nueva goroutine se ejecutara de
+manera concurrente a la que la está llamando.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">go</span> <span class="nx">f</span><span class="p">(</span><span class="s">&quot;goroutine&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -118,12 +106,12 @@ concurrently with the calling one.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also start a goroutine for an anonymous
-function call.</p>
+            <p>Puedes comenzar una goroutine con una llamada a
+una función anónima.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">(</span><span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">msg</span><span class="p">)</span>
     <span class="p">}(</span><span class="s">&quot;going&quot;</span><span class="p">)</span>
@@ -134,14 +122,15 @@ function call.</p>
         
         <tr>
           <td class="docs">
-            <p>Our two goroutines are running asynchronously in
-separate goroutines now, so execution falls through
-to here. This <code>Scanln</code> code requires we press a key
-before the program exits.</p>
+            <p>Nuestras dos goroutines están corriendo de manera
+asíncrona en dos goroutines separadas, así que
+la ejecución avanza hasta aquí. Este código
+<code>Scanln</code> requiere que presionemos una tecla antes
+de que el programa termine.</p>
 
           </td>
           <td class="code">
-	        
+          
             <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">input</span> <span class="kt">string</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Scanln</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">input</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
@@ -157,14 +146,15 @@ before the program exits.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run this program, we see the output of the
-blocking call first, then the interleaved output of the
-two gouroutines. This interleaving reflects the
-goroutines being run concurrently by the Go runtime.</p>
+            <p>Cuando corremos este programa, podemos ver la salida
+de la llamada que bloquea primero, luego la salida
+intercalada de las dos goroutines. Esto refleja
+que las goroutines están siendo ejecutadas de manera
+concurrente por Go.</p>
 
           </td>
           <td class="code leading">
-	        
+          
             <div class="highlight"><pre><span class="gp">$</span> go run goroutines.go
 <span class="go">direct : 0</span>
 <span class="go">direct : 1</span>
@@ -182,12 +172,12 @@ goroutines being run concurrently by the Go runtime.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at a complement to goroutines in
-concurrent Go programs: channels.</p>
+            <p>Ahora veremos un complemento de las goroutine en
+programas concurrentes de Go: Canales.</p>
 
           </td>
           <td class="code empty">
-	        
+          
             
           </td>
         </tr>
@@ -196,7 +186,7 @@ concurrent Go programs: channels.</p>
       
       
       <p class="next">
-        Next example: <a href="channels">Channels</a>.
+        Siguiente ejemplo: <a href="channels">Channels</a>.
       </p>
       
       <p class="footer">

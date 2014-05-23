@@ -1,7 +1,8 @@
-# When we run this program, we see the output of the
-# blocking call first, then the interleaved output of the
-# two gouroutines. This interleaving reflects the
-# goroutines being run concurrently by the Go runtime.
+# Cuando corremos este programa, podemos ver la salida
+# de la llamada que bloquea primero, luego la salida
+# intercalada de las dos goroutines. Esto refleja
+# que las goroutines están siendo ejecutadas de manera
+# concurrente por Go.
 $ go run goroutines.go
 direct : 0
 direct : 1
@@ -13,5 +14,5 @@ goroutine : 2
 <enter>
 done
 
-# Next we'll look at a complement to goroutines in
-# concurrent Go programs: channels.
+# Ahora veremos un complemento de las goroutine en
+# programas concurrentes de Go: Canales.
