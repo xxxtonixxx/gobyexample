@@ -37,7 +37,7 @@ Atomic Counters
 Mutexes
 Stateful Goroutines
 Ordenamiento
-Sorting by Functions
+Ordenamiento por Funciones
 Panic
 Defer
 Collection Functions
