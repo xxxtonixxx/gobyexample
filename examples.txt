@@ -36,12 +36,12 @@ Rate Limiting
 Atomic Counters
 Mutexes
 Stateful Goroutines
-Sorting
-Sorting by Functions
+Ordenamiento
+Ordenamiento por Funciones
 Panic
 Defer
 Collection Functions
-String Functions
+Funciones de Cadenas
 String Formatting
 Regular Expressions
 JSON
