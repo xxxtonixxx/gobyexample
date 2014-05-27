@@ -45,7 +45,7 @@ Funciones de Cadenas
 String Formatting
 Regular Expressions
 JSON
-Time
+Tiempo
 Epoch
 Time Formatting / Parsing
 Random Numbers
