@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Channel Directions</title>
+    <title>Go con Ejemplos: Direccion de Canales</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,17 +16,17 @@
 
   </script>
   <body>
-    <div class="example" id="channel-directions">
-      <h2><a href="./">Go con Ejemplos</a>: Channel Directions</h2>
+    <div class="example" id="direccion-de-canales">
+      <h2><a href="./">Go con Ejemplos</a>: Direccion de Canales</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>When using channels as function parameters, you can
-specify if a channel is meant to only send or receive
-values. This specificity increases the type-safety of
-the program.</p>
+            <p>Cuando utilizas un canal como parámetro de una función,
+puedes especificar si el canal es solo para recibir o enviar
+valores. Esto nos permite incrementar la seguridad de tipos
+del programa.</p>
 
           </td>
           <td class="code empty leading">
@@ -40,7 +40,7 @@ the program.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/P9Fujfpa1f"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/QzsXSyw07m"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -61,9 +61,9 @@ the program.</p>
         
         <tr>
           <td class="docs">
-            <p>This <code>ping</code> function only accepts a channel for sending
-values. It would be a compile-time error to try to
-receive on this channel.</p>
+            <p>Esta función <code>ping</code> solo acepta un canal para enviar valores.
+Se arrojaría un error de compilación si intentamos recibir
+un valor en este canal.</p>
 
           </td>
           <td class="code leading">
@@ -78,8 +78,8 @@ receive on this channel.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>pong</code> function accepts one channel for receives
-(<code>pings</code>) and a second for sends (<code>pongs</code>).</p>
+            <p>La función <code>pong</code> acepta un canal para recibir (<code>pings</code>) y
+un segundo canal para enviar (<code>pongs</code>).</p>
 
           </td>
           <td class="code leading">
@@ -102,7 +102,7 @@ receive on this channel.</p>
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">pings</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="nx">pongs</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;passed message&quot;</span><span class="p">)</span>
+    <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;mensaje enviado&quot;</span><span class="p">)</span>
     <span class="nx">pong</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="nx">pongs</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">pongs</span><span class="p">)</span>
 <span class="p">}</span>
@@ -122,7 +122,7 @@ receive on this channel.</p>
           <td class="code">
           
             <div class="highlight"><pre><span class="gp">$</span> go run channel-directions.go
-<span class="go">passed message</span>
+<span class="go">mensaje enviado</span>
 </pre></div>
 
           </td>
@@ -136,7 +136,7 @@ receive on this channel.</p>
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/channel-directions">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/direccion-de-canales">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

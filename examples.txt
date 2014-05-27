@@ -23,7 +23,7 @@ Goroutines
 Canales
 Buffering de Canales
 Sincronizacion de Canales
-Channel Directions
+Direccion de Canales
 Select
 Timeouts
 Non-Blocking Channel Operations
