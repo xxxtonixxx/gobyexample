@@ -13,7 +13,7 @@ este proceso están en `tools`.
 
 El proceso produce un directorio de archivos estáticos - `public` - perfecto
 para ser servido por cualquier servidor HTTP moderno. Aparte,
-se incluye un servidor lugero de Go en `server.go`.
+se incluye un servidor ligero de Go en `server.go`.
 
 ### Compilar
 
@@ -47,7 +47,7 @@ $ foreman open
 
 ### Deploy en Heroku
 
-Basic setup:
+Setup Básico:
 
 ```bash
 $ export DEPLOY=$USER
