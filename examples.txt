@@ -25,7 +25,7 @@ Buffering de Canales
 Sincronizacion de Canales
 Direccion de Canales
 Select
-Timeouts
+Tiempo de espera
 Non-Blocking Channel Operations
 Closing Channels
 Range over Channels
