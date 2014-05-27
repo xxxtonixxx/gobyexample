@@ -41,7 +41,7 @@ Sorting by Functions
 Panic
 Defer
 Collection Functions
-String Functions
+Funciones de Cadenas
 String Formatting
 Regular Expressions
 JSON
