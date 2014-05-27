@@ -1,5 +1,5 @@
 // Cuando utilizas un canal como parámetro de una función,
-// puedes especificar si el canal es solo para recivir o enviar
+// puedes especificar si el canal es solo para recibir o enviar
 // valores. Esto nos permite incrementar la seguridad de tipos
 // del programa.
 

@@ -23,8 +23,8 @@
         
         <tr>
           <td class="docs">
-            <p>Cuando utilizas un canal como el parametro de una función,
-puedes especificar si el canal es solo para recivir o enviar
+            <p>Cuando utilizas un canal como parámetro de una función,
+puedes especificar si el canal es solo para recibir o enviar
 valores. Esto nos permite incrementar la seguridad de tipos
 del programa.</p>
 
@@ -40,7 +40,7 @@ del programa.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/op3-kALJ3s"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/QzsXSyw07m"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -102,7 +102,7 @@ un segundo canal para enviar (<code>pongs</code>).</p>
             <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">pings</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
     <span class="nx">pongs</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">string</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;passed message&quot;</span><span class="p">)</span>
+    <span class="nx">ping</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="s">&quot;mensaje enviado&quot;</span><span class="p">)</span>
     <span class="nx">pong</span><span class="p">(</span><span class="nx">pings</span><span class="p">,</span> <span class="nx">pongs</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">pongs</span><span class="p">)</span>
 <span class="p">}</span>
@@ -122,7 +122,7 @@ un segundo canal para enviar (<code>pongs</code>).</p>
           <td class="code">
           
             <div class="highlight"><pre><span class="gp">$</span> go run channel-directions.go
-<span class="go">passed message</span>
+<span class="go">mensaje enviado</span>
 </pre></div>
 
           </td>
