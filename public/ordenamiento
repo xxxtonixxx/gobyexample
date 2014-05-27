@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Sorting</title>
+    <title>Go con Ejemplos: Ordenamiento</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,16 +16,16 @@
 
   </script>
   <body>
-    <div class="example" id="sorting">
-      <h2><a href="./">Go con Ejemplos</a>: Sorting</h2>
+    <div class="example" id="ordenamiento">
+      <h2><a href="./">Go con Ejemplos</a>: Ordenamiento</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Go’s <code>sort</code> package implements sorting for builtins
-and user-defined types. We’ll look at sorting for
-builtins first.</p>
+            <p>El paquete <code>sort</code> de Go implementa ordenamiento para los tipos primitivos
+y definidos por el usuario. Primero veremos el ordenamiento para los
+del tipo primitivo.</p>
 
           </td>
           <td class="code empty leading">
@@ -39,7 +39,7 @@ builtins first.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/roQOJXtqAb"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/U9RtH3DEeF"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -73,10 +73,10 @@ builtins first.</p>
         
         <tr>
           <td class="docs">
-            <p>Sort methods are specific to the builtin type;
-here’s an example for strings. Note that sorting is
-in-place, so it changes the given slice and doesn’t
-return a new one.</p>
+            <p>Los métodos de ordenamiento son específicos para los tipos primitivos;
+aquí hay un ejemplo para <code>strings</code>. Observa que el ordenamiento es
+interno, por lo que se cambia el slice proporcionado y no se
+regresa uno nuevo.</p>
 
           </td>
           <td class="code leading">
@@ -91,7 +91,7 @@ return a new one.</p>
         
         <tr>
           <td class="docs">
-            <p>An example of sorting <code>int</code>s.</p>
+            <p>Un ejemplo de ordenamiento de <code>int</code>s.</p>
 
           </td>
           <td class="code leading">
@@ -106,8 +106,8 @@ return a new one.</p>
         
         <tr>
           <td class="docs">
-            <p>We can also use <code>sort</code> to check if a slice is
-already in sorted order.</p>
+            <p>También podemos usar <code>sort</code> para verificar si un slice
+ya está actualmente ordenado.</p>
 
           </td>
           <td class="code">
@@ -126,8 +126,9 @@ already in sorted order.</p>
         
         <tr>
           <td class="docs">
-            <p>Running our program prints the sorted string and int
-slices and <code>true</code> as the result of our <code>AreSorted</code> test.</p>
+            <p>Al correr nuestro programa, se imprimen los slices de
+<code>string</code> e <code>int</code> ordenados y <code>true</code> como resultado
+de nuestra prueba de <code>AreSorted</code>.</p>
 
           </td>
           <td class="code">
@@ -149,7 +150,7 @@ slices and <code>true</code> as the result of our <code>AreSorted</code> test.</
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/sorting">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/ordenamiento">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>
