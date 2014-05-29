@@ -1,19 +1,17 @@
 ## Go con Ejemplos
 
-Contenido, herramientas y el web server de el sitio
-[Go con Ejemplos](http://goconejemplos.com).
+Contenido, herramientas y servidor web de [Go con Ejemplos][1].
 
 ### Información General
 
-El sitio de Go con Ejemplos se construye extrayendo el
-código y los comentarios de los archivos fuente en el
-folder `examples` y mostrando esa información en el sitio
-usando `templates`. Los programas que implementan
-este proceso están en `tools`.
+El sitio de [Go con Ejemplos][1] se construye analizando el código y los
+comentarios de los archivos fuente en el folder `examples` y mostrando esta
+información en el sitio usando `templates` (plantillas). Los programas que
+realizan este proceso de publicación se encuentran en el directorio `tools`.
 
-El proceso produce un directorio de archivos estáticos - `public` - perfecto
-para ser servido por cualquier servidor HTTP moderno. Aparte,
-se incluye un servidor ligero de Go en `server.go`.
+El proceso de publicación produce un directorio de archivos estáticos
+(`public`) perfecto para ser servido por cualquier servidor HTTP moderno.
+Además, se incluye un servidor web Go ligero en `server.go`.
 
 ### Compilar
 
@@ -35,15 +33,14 @@ $ tools/build-loop
 ### Deploy Local
 
 ```bash
-$ mkdir -p $GOPATH/src/github.com/mmcgrana
-$ cd $GOPATH/src/github.com/mmcgrana
-$ git clone git@github.com:mmcgrana/gobyexample.git
+$ mkdir -p $GOPATH/src/github.com/dabit
+$ cd $GOPATH/src/github.com/dabit
+$ git clone https://github.com/dabit/gobyexample.git
 $ cd gobyexample
 $ go get
 $ foreman start
 $ foreman open
 ```
-
 
 ### Deploy en Heroku
 
@@ -54,7 +51,7 @@ $ export DEPLOY=$USER
 $ export APP=gobyexample-$USER
 $ heroku create $APP -r $DEPLOY
 $ heroku config:add -a $APP
-    BUILDPACK_URL=https://github.com/mmcgrana/buildpack-go.git
+    BUILDPACK_URL=https://github.com/dabit/buildpack-go.git
     CANONICAL_HOST=$APP.herokuapp.com \
     FORCE_HTTPS=1 \
     AUTH=go:byexample
@@ -94,9 +91,9 @@ Algunas traducciones hechas por contribuidores:
 
 * [Chino](http://everyx.github.io/gobyexample/) by [everyx](https://github.com/everyx)
 
-
 ### Gracias
 
-Gracias a [Jeremy Ashkenas](https://github.com/jashkenas)
-por [Docco](http://jashkenas.github.com/docco/), lo que
-inspiró este proyecto.
+Gracias a [Jeremy Ashkenas](https://github.com/jashkenas) por
+[Docco](http://jashkenas.github.com/docco/), lo que inspiró este proyecto.
+
+[1]: http://goconejemplos.com
