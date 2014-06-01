@@ -1,6 +1,7 @@
 // Al _cerrar_ un canal, indicamos que ya no se enviarán
 // más valores por él. Esto puede ser útil para comunicar 
-// a los canales receptores que el trabajo se ha completado.
+// a los canales receptores que el trabajo se ha 
+//completado.
 package main
 
 import "fmt"
@@ -18,7 +19,8 @@ func main() {
     // continuamente desde `jobs` con `j, more := <- jobs`.
     // En esta variante de recepción de 2 valores, el 
     // valor `more` será `false` si `jobs` ha sido cerrado
-    // y todos los valores en este canal han sido recibidos.
+    // y todos los valores en este canal han sido 
+    // recibidos.
     // Usamos esto para notificar en el canal `done` que 
     // ya hemos terminado con todos los trabajos.
     go func() {
