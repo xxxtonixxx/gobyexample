@@ -28,7 +28,7 @@ Select
 Tiempo de espera
 Operaciones sobre canales sin bloqueo
 Cerrando canales
-Range over Channels
+Range sobre canales
 Timers
 Tickers
 Worker Pools
