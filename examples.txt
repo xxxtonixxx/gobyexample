@@ -31,7 +31,7 @@ Closing Channels
 Range over Channels
 Timers
 Tickers
-Worker Pools
+Pool de trabajadores
 Rate Limiting
 Atomic Counters
 Mutexes
