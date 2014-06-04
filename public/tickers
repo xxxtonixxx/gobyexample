@@ -23,11 +23,12 @@
         
         <tr>
           <td class="docs">
-            <p><a>Timers</a> are for when you want to do
-something once in the future - <em>tickers</em> are for when
-you want to do something repeatedly at regular
-intervals. Here’s an example of a ticker that ticks
-periodically until we stop it.</p>
+            <p>Los <a>temporizadores</a> son para cuando
+quieres hacer una cosa en el futuro - los <em>tickers</em>
+( por aquello de tic tac ) sin para cuando queires
+hacer algo repetidamente en intervalos regulares.
+Aquí hay un ejemmplo de un ticker que hace tic
+periodicamente hasta que lo detenemos.</p>
 
           </td>
           <td class="code empty leading">
@@ -41,7 +42,7 @@ periodically until we stop it.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/U0PO7ZZU3l"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/dxOU9c9P9i"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -75,10 +76,11 @@ periodically until we stop it.</p>
         
         <tr>
           <td class="docs">
-            <p>Tickers use a similar mechanism to timers: a
-channel that is sent values. Here we’ll use the
-<code>range</code> builtin on the channel to iterate over
-the values as they arrive every 500ms.</p>
+            <p>Los tickers usan un mecanismo similar a los
+temporizadores: un canal el que se le envían
+valores. Aquí vamos a usar el builtin <code>range</code> en
+el canal para iterar cada 500ms. los valores
+conforme van llegando.</p>
 
           </td>
           <td class="code leading">
@@ -86,7 +88,7 @@ the values as they arrive every 500ms.</p>
             <div class="highlight"><pre>    <span class="nx">ticker</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">NewTicker</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">500</span><span class="p">)</span>
     <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">for</span> <span class="nx">t</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ticker</span><span class="p">.</span><span class="nx">C</span> <span class="p">{</span>
-            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Tick at&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Tic a las&quot;</span><span class="p">,</span> <span class="nx">t</span><span class="p">)</span>
         <span class="p">}</span>
     <span class="p">}()</span>
 </pre></div>
@@ -96,16 +98,17 @@ the values as they arrive every 500ms.</p>
         
         <tr>
           <td class="docs">
-            <p>Tickers can be stopped like timers. Once a ticker
-is stopped it won’t receive any more values on its
-channel. We’ll stop ours after 1500ms.</p>
+            <p>Los tickers pueden ser detenidos igual que los
+temporizadores. Una vez que un ticker es detenido
+ya no recibirá más valores en su canal.
+Detendremos el nuestro después de 1500ms.</p>
 
           </td>
           <td class="code">
           
             <div class="highlight"><pre>    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span> <span class="o">*</span> <span class="mi">1500</span><span class="p">)</span>
     <span class="nx">ticker</span><span class="p">.</span><span class="nx">Stop</span><span class="p">()</span>
-    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Ticker stopped&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Ticker detenido&quot;</span><span class="p">)</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -118,17 +121,17 @@ channel. We’ll stop ours after 1500ms.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run this program the ticker should tick 3 times
-before we stop it.</p>
+            <p>Cuando corremos este programa, debe de hacer tic tres
+veces antes de que lo detengamos.</p>
 
           </td>
           <td class="code">
           
             <div class="highlight"><pre><span class="gp">$</span> go run tickers.go
-<span class="go">Tick at 2012-09-23 11:29:56.487625 -0700 PDT</span>
-<span class="go">Tick at 2012-09-23 11:29:56.988063 -0700 PDT</span>
-<span class="go">Tick at 2012-09-23 11:29:57.488076 -0700 PDT</span>
-<span class="go">Ticker stopped</span>
+<span class="go">Tic a las 2014-06-03 23:32:57.180114752 -0500 CDT</span>
+<span class="go">Tic a las 2014-06-03 23:32:57.680578946 -0500 CDT</span>
+<span class="go">Tic a las 2014-06-03 23:32:58.180938733 -0500 CDT</span>
+<span class="go">Ticker detenido</span>
 </pre></div>
 
           </td>
