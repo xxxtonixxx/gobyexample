@@ -3,6 +3,7 @@ package main
 import (
     "crypto/sha1"
     "fmt"
+    "github.com/extemporalgenome/slug"
     "github.com/russross/blackfriday"
     "io/ioutil"
     "net/http"
@@ -222,11 +223,7 @@ func parseExamples() []*Example {
     for _, exampleName := range exampleNames {
         if (exampleName != "") && !strings.HasPrefix(exampleName, "#") {
             example := Example{Name: exampleName}
-            exampleId := strings.ToLower(exampleName)
-            exampleId = strings.Replace(exampleId, " ", "-", -1)
-            exampleId = strings.Replace(exampleId, "/", "-", -1)
-            exampleId = strings.Replace(exampleId, "'", "", -1)
-            exampleId = dashPat.ReplaceAllString(exampleId, "-")
+            exampleId := slug.Slug(exampleName)
             example.Id = exampleId
             example.Segs = make([][]*Seg, 0)
             sourcePaths := mustGlob("examples/" + exampleId + "/*")
