@@ -1,5 +1,5 @@
-# Al correr el programa de análisis de URL podemos ver todas las diferentes
-# partes que hemos identificado.
+# Al correr el programa de análisis de URL podemos ver
+# todas las diferentes partes que hemos identificado.
 $ go run url-parsing.go
 postgres
 user:pass
