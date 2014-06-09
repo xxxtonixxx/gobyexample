@@ -1,4 +1,5 @@
-# Ejecutamos el programa para demostrar la escritura de archivos.
+# Ejecutamos el programa para demostrar la escritura de
+# archivos.
 $ go run writing-files.go
 wrote 5 bytes
 wrote 7 bytes
@@ -13,5 +14,6 @@ some
 writes
 buffered
 
-# Ahora veremos cómo implementar algunas de las ideas de entrada y salida (I/O)
-# con archivos, hasta ahora sólo hemos visto el uso de `stdin` y `stdout`.
+# Ahora veremos cómo implementar algunas de las ideas de
+# entrada y salida (I/O) con archivos, hasta ahora sólo
+# hemos visto el uso de `stdin` y `stdout`.

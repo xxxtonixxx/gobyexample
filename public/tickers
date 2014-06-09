@@ -23,10 +23,10 @@
         
         <tr>
           <td class="docs">
-            <p>Los <a>temporizadores</a> son para cuando
+            <p>Los <a>temporizadores</a> se usan cuando
 quieres hacer una cosa en el futuro - los <em>tickers</em>
-( por aquello de tic tac ) sin para cuando queires
-hacer algo repetidamente en intervalos regulares.
+( por aquello de tic tac ) cuando cuando hacer algo
+repetidamente en intervalos regulares.
 Aquí hay un ejemmplo de un ticker que hace tic
 periodicamente hasta que lo detenemos.</p>
 
@@ -42,7 +42,7 @@ periodicamente hasta que lo detenemos.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/dxOU9c9P9i"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/YGlWOrly5k"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -141,7 +141,7 @@ veces antes de que lo detengamos.</p>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="worker-pools">Worker Pools</a>.
+        Siguiente ejemplo: <a href="pool-de-trabajadores">Pool de trabajadores</a>.
       </p>
       
       <p class="footer">

@@ -25,12 +25,13 @@
           <td class="docs">
             <p>Al <em>cerrar</em> un canal, indicamos que ya no se enviarán
 más valores por él. Esto puede ser útil para comunicar
-a los canales receptores que el trabajo se ha completado.</p>
+a los canales receptores que el trabajo se ha</p>
 
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/iZ8cy1XY3V"><img title="Run code" src="play.png" class="run" /></a>
-            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+          <a href="http://play.golang.org/p/LLzv-cO4V7"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="c1">//completado.</span>
+<span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
           </td>
@@ -51,10 +52,10 @@ a los canales receptores que el trabajo se ha completado.</p>
         <tr>
           <td class="docs">
             <p>En este ejemplo vamos a usar el canal <code>jobs</code> para
-comunicar el trabajo que debe de ser hecho desde la<br/>
+comunicar el trabajo que debe de ser hecho desde la
 gorutina <code>main()</code> hacia la gorutina trabajadora. Cuando
-no haya más trabajos cerraremos el canal <code>jobs</code> con
-la llamada built-in <code>close</code>.</p>
+no haya más trabajos cerraremos el canal <code>jobs</code> con la
+llamada built-in <code>close</code>.</p>
 
           </td>
           <td class="code leading">
@@ -70,12 +71,13 @@ la llamada built-in <code>close</code>.</p>
         <tr>
           <td class="docs">
             <p>Aquí esta la gorutina trabajadora. Recibe
-continuamente desde <code>jobs</code> con <code>j, more := &lt;- jobs</code>.
-En esta variante de recepción de 2 valores, el
-valor <code>more</code> será <code>false</code> si <code>jobs</code> ha sido cerrado
-y todos los valores en este canal han sido recibidos.
-Usamos esto para notificar en el canal <code>done</code> que
-ya hemos terminado con todos los trabajos.</p>
+continuamente desde <code>jobs</code> con <code>j, more := &lt;-
+jobs</code>.  En esta variante de recepción de 2 valores,
+el valor <code>more</code> será <code>false</code> si <code>jobs</code> ha sido
+cerrado y todos los valores en este canal han sido
+recibidos.  Usamos esto para notificar en el canal
+<code>done</code> que ya hemos terminado con todos los
+trabajos.</p>
 
           </td>
           <td class="code leading">
@@ -86,8 +88,8 @@ ya hemos terminado con todos los trabajos.</p>
             <span class="k">if</span> <span class="nx">more</span> <span class="p">{</span>
                 <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;trabajo recibido&quot;</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;todos los trabajos han sido&quot;</span><span class="o">+</span>
-                            <span class="s">&quot; recibidos&quot;</span><span class="p">)</span>
+                <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;todos los trabajos han&quot;</span> <span class="o">+</span>
+                    <span class="s">&quot;sido recibidos&quot;</span><span class="p">)</span>
                 <span class="nx">done</span> <span class="o">&lt;-</span> <span class="kc">true</span>
                 <span class="k">return</span>
             <span class="p">}</span>
@@ -100,8 +102,8 @@ ya hemos terminado con todos los trabajos.</p>
         
         <tr>
           <td class="docs">
-            <p>Aquí enviamos tres trabajos al trabajador por el canal
-<code>jobs</code> y luego lo cerramos.</p>
+            <p>Aquí enviamos tres trabajos al trabajador por el
+canal <code>jobs</code> y luego lo cerramos.</p>
 
           </td>
           <td class="code leading">
@@ -119,8 +121,8 @@ ya hemos terminado con todos los trabajos.</p>
         
         <tr>
           <td class="docs">
-            <p>Esperamos a que el trabajador termine usando
-la <a>sincronización</a> de
+            <p>Esperamos a que el trabajador termine usando la
+<a>sincronización</a> de
 canales que vimos anteriormente</p>
 
           </td>
