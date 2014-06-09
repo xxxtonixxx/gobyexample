@@ -1,4 +1,4 @@
-// En este ejemplo veremos como implementar un 
+// En este ejemplo veremos como implementar un
 // _pool de trabajadores_  usando goroutines y canales.
 
 package main
@@ -10,12 +10,12 @@ import "time"
 // instancias concurrentes. Estos trabajadores recibirán
 // trabajo desde el canal `jobs` y enviarán el resultado
 // correspondiente en el canal `results`. Vamos a hacer
-// una pausa de un segundo por trabajo para simular una 
+// una pausa de un segundo por trabajo para simular una
 // tarea pesada.
 func worker(id int, jobs <-chan int, results chan<- int) {
     for j := range jobs {
-        fmt.Println("trabajador", id ,
-                    "procesando trabajo", j)
+        fmt.Println("trabajador", id,
+            "procesando trabajo", j)
         time.Sleep(time.Second)
         results <- j * 2
     }
@@ -24,12 +24,12 @@ func worker(id int, jobs <-chan int, results chan<- int) {
 func main() {
 
     // Para usar nuestro pool de trabajadores necesitamos
-    // enviarles trabajo y recolectar sus resultados. 
+    // enviarles trabajo y recolectar sus resultados.
     // Hacemos dos canales para esto.
     jobs := make(chan int, 100)
     results := make(chan int, 100)
 
-    // Aquí iniciamos tres trabajadores, inicialmente 
+    // Aquí iniciamos tres trabajadores, inicialmente
     // bloqueados porque no hay trabajos aún.
     for w := 1; w <= 3; w++ {
         go worker(w, jobs, results)
@@ -43,7 +43,7 @@ func main() {
     }
     close(jobs)
 
-        // Finalmente recolectamos todos los resultados.
+    // Finalmente recolectamos todos los resultados.
     for a := 1; a <= 9; a++ {
         <-results
     }
