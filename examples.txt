@@ -26,9 +26,9 @@ Sincronizacion de Canales
 Direccion de Canales
 Select
 Tiempo de espera
-Non-Blocking Channel Operations
-Closing Channels
-Range over Channels
+Operaciones sobre canales sin bloqueo
+Cerrando canales
+Range sobre canales
 Timers
 Tickers
 Pool de trabajadores
