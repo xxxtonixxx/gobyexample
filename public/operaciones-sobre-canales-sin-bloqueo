@@ -23,14 +23,15 @@
         
         <tr>
           <td class="docs">
-            <p>Los envíos y recepciones básicos sobre un canal lo bloquean.
-Sin embargo, podemos usar la cláusula <code>select</code> con un cláusula <code>default</code>
-para implementar envios y recepciones sin bloqueo (non-blocking) e incluso
-<code>select</code>s multi-vía sin bloqueo.</p>
+            <p>Los envíos y recepciones básicos sobre un canal lo
+bloquean. Sin embargo, podemos usar la cláusula
+<code>select</code> con un cláusula <code>default</code> para implementar
+envios y recepciones sin bloqueo (non-blocking) e
+incluso <code>select</code>s multi-vía sin bloqueo.</p>
 
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/QOYrPAlSBW"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/W_SWbr10Uk"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -66,8 +67,8 @@ para implementar envios y recepciones sin bloqueo (non-blocking) e incluso
         <tr>
           <td class="docs">
             <p>Aquí hay un envío sin bloqueo. Si hay algún valor
-disponible en <code>messages</code> entonces el <code>select</code> tomará
-el <code>case</code> <code>&lt;-messages</code> con ese valor. Sino
+disponible en <code>messages</code> entonces el <code>select</code>
+tomará el <code>case</code> <code>&lt;-messages</code> con ese valor. Sino
 tomará inmediatamente el <code>case</code> <code>default</code>.</p>
 
           </td>
