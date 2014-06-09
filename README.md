@@ -20,7 +20,6 @@ Para compilar el sitio:
 ```console
 $ go get github.com/russross/blackfriday
 $ tools/build
-$ open public/index.html
 ```
 
 Para compilar constantemente en un ciclo:
@@ -29,51 +28,11 @@ Para compilar constantemente en un ciclo:
 $ tools/build-loop
 ```
 
-
 ### Deploy Local
 
-```bash
-$ mkdir -p $GOPATH/src/github.com/dabit
-$ cd $GOPATH/src/github.com/dabit
-$ git clone https://github.com/dabit/gobyexample.git
-$ cd gobyexample
-$ go get
-$ foreman start
-$ foreman open
-```
-
-### Deploy en Heroku
-
-Setup Básico:
-
-```bash
-$ export DEPLOY=$USER
-$ export APP=gobyexample-$USER
-$ heroku create $APP -r $DEPLOY
-$ heroku config:add -a $APP
-    BUILDPACK_URL=https://github.com/dabit/buildpack-go.git
-    CANONICAL_HOST=$APP.herokuapp.com \
-    FORCE_HTTPS=1 \
-    AUTH=go:byexample
-$ heroku labs:enable dot-profile-d -a $APP
-$ git push $DEPLOY master
-$ heroku open -a $APP
-```
-
-Agregar un dominio + SSL:
-
-```bash
-$ heroku domains:add $DOMAIN
-$ heroku addons:add ssl -r $DEPLOY
-# order ssl cert for domain
-$ cat > /tmp/server.key
-$ cat > /tmp/server.crt.orig
-$ curl https://knowledge.rapidssl.com/library/VERISIGN/ALL_OTHER/RapidSSL%20Intermediate/RapidSSL_CA_bundle.pem > /tmp/rapidssl_bundle.pem
-$ cat /tmp/server.crt.orig /tmp/rapidssl_bundle.pem > /tmp/server.crt
-$ heroku certs:add /tmp/server.crt /tmp/server.key -r $DEPLOY
-# add ALIAS record from domain to ssl endpoint dns
-$ heroku config:add CANONICAL_HOST=$DOMAIN -r $DEPLOY
-$ heroku open -r $DEPLOY
+```console
+$ cd tools
+$ go run server.go
 ```
 
 ### License
