@@ -42,7 +42,7 @@ Panic
 Defer
 Collection Functions
 Funciones de Cadenas
-String Formatting
+Formateo de cadenas
 Regular Expressions
 JSON
 Tiempo
