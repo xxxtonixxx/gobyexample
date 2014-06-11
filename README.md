@@ -18,6 +18,7 @@ Además, se incluye un servidor web Go ligero en `server.go`.
 Para compilar el sitio:
 
 ```console
+$ go get github.com/extemporalgenome/slug
 $ go get github.com/russross/blackfriday
 $ ./tools/build
 ```
