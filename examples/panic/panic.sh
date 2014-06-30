@@ -1,8 +1,9 @@
-# Running this program will cause it to panic, print
-# an error message and goroutine traces, and exit with
-# a non-zero status.
+# Ejecutar este programa provocará la llamada a panic,
+# imprimirá un mensaje de error, el registro de ejecución
+# de la goroutine y terminará con un estatus diferente a
+# cero.
 $ go run panic.go
-panic: a problem
+panic: un problema
 
 goroutine 1 [running]:
 main.main()
@@ -10,6 +11,7 @@ main.main()
 ...
 exit status 2
 
-# Note that unlike some languages which use exceptions
-# for handling of many errors, in Go it is idiomatic
-# to use error-indicating return values wherever possible.
+# Observe que a diferencia de algunos lenguajes que
+# utilizan excepciones para el manejo de errores, en Go
+# es propio del lenguaje devolver valores de error cada
+# vez que sea posible

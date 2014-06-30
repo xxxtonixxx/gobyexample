@@ -1,7 +1,8 @@
-// A `panic` typically means something went unexpectedly
-// wrong. Mostly we use it to fail fast on errors that
-// shouldn't occur during normal operation, or that we
-// aren't prepared to handle gracefully.
+// Una llamada a `panic` típicamente significa que sucedió
+// un error inesperado. Lo usamos principalmente para terminar
+// la ejecución en caso de errores que no debieran aparecer
+// durante la operación normal o que no estamos listos
+// para manejar adecuadamente.
 
 package main
 
@@ -9,15 +10,16 @@ import "os"
 
 func main() {
 
-    // We'll use panic throughout this site to check for
-    // unexpected errors. This is the only program on the
-    // site designed to panic.
-    panic("a problem")
+    // Usaremos `panic` a lo largo de este sitio para comprobar
+    // errores inesperados. Este el el único programa en el
+    // sitio diseñado para llamar a la función `panic`
+    panic("un problema")
 
-    // A common use of panic is to abort if a function
-    // returns an error value that we don't know how to
-    // (or want to) handle. Here's an example of
-    // `panic`king if we get an unexpected error when creating a new file.
+    // Un uso común de `panic` es abortar la ejecución
+    // si una función devuelve un valor de error que no
+    // sabemos (o queremos) manejar. Este es un ejemplo
+    // de `panic` si encontramos un error inesperado al
+    // momento de crear un archivo nuevo
     _, err := os.Create("/tmp/file")
     if err != nil {
         panic(err)
