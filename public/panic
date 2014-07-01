@@ -23,10 +23,11 @@
         
         <tr>
           <td class="docs">
-            <p>A <code>panic</code> typically means something went unexpectedly
-wrong. Mostly we use it to fail fast on errors that
-shouldn’t occur during normal operation, or that we
-aren’t prepared to handle gracefully.</p>
+            <p>Una llamada a <code>panic</code> típicamente significa que sucedió
+un error inesperado. Lo usamos principalmente para terminar
+la ejecución en caso de errores que no debieran aparecer
+durante la operación normal o que no estamos listos
+para manejar adecuadamente.</p>
 
           </td>
           <td class="code empty leading">
@@ -40,7 +41,7 @@ aren’t prepared to handle gracefully.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/c86oXzfQOt"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/RL5PNBD-KU"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -73,14 +74,14 @@ aren’t prepared to handle gracefully.</p>
         
         <tr>
           <td class="docs">
-            <p>We’ll use panic throughout this site to check for
-unexpected errors. This is the only program on the
-site designed to panic.</p>
+            <p>Usaremos <code>panic</code> a lo largo de este sitio para comprobar
+errores inesperados. Este el el único programa en el
+sitio diseñado para llamar a la función <code>panic</code></p>
 
           </td>
           <td class="code leading">
           
-            <div class="highlight"><pre>    <span class="nb">panic</span><span class="p">(</span><span class="s">&quot;a problem&quot;</span><span class="p">)</span>
+            <div class="highlight"><pre>    <span class="nb">panic</span><span class="p">(</span><span class="s">&quot;un problema&quot;</span><span class="p">)</span>
 </pre></div>
 
           </td>
@@ -88,10 +89,11 @@ site designed to panic.</p>
         
         <tr>
           <td class="docs">
-            <p>A common use of panic is to abort if a function
-returns an error value that we don’t know how to
-(or want to) handle. Here’s an example of
-<code>panic</code>king if we get an unexpected error when creating a new file.</p>
+            <p>Un uso común de <code>panic</code> es abortar la ejecución
+si una función devuelve un valor de error que no
+sabemos (o queremos) manejar. Este es un ejemplo
+de <code>panic</code> si encontramos un error inesperado al
+momento de crear un archivo nuevo</p>
 
           </td>
           <td class="code">
@@ -112,15 +114,16 @@ returns an error value that we don’t know how to
         
         <tr>
           <td class="docs">
-            <p>Running this program will cause it to panic, print
-an error message and goroutine traces, and exit with
-a non-zero status.</p>
+            <p>Ejecutar este programa provocará la llamada a panic,
+imprimirá un mensaje de error, el registro de ejecución
+de la goroutine y terminará con un estatus diferente a
+cero.</p>
 
           </td>
           <td class="code leading">
           
             <div class="highlight"><pre><span class="gp">$</span> go run panic.go
-<span class="go">panic: a problem</span>
+<span class="go">panic: un problema</span>
 </pre></div>
 
           </td>
@@ -144,9 +147,10 @@ a non-zero status.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that unlike some languages which use exceptions
-for handling of many errors, in Go it is idiomatic
-to use error-indicating return values wherever possible.</p>
+            <p>Observe que a diferencia de algunos lenguajes que
+utilizan excepciones para el manejo de errores, en Go
+es propio del lenguaje devolver valores de error cada
+vez que sea posible</p>
 
           </td>
           <td class="code empty">
