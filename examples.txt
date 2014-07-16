@@ -16,7 +16,7 @@ Closures
 Recursion
 Apuntadores
 Structs
-Metodos
+Métodos
 Interfaces
 Errores
 Goroutines
@@ -29,11 +29,11 @@ Tiempo de espera
 Operaciones sobre canales sin bloqueo
 Cerrando canales
 Range sobre canales
-Timers
+Temporizadores
 Tickers
 Pool de trabajadores
-Rate Limiting
-Atomic Counters
+Limitación de transferencia
+Contadores atómicos
 Mutexes
 Stateful Goroutines
 Ordenamiento

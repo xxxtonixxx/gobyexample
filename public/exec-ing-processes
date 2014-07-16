@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Rate Limiting</title>
+    <title>Go con Ejemplos: Exec'ing Processes</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,16 +16,16 @@
 
   </script>
   <body>
-    <div class="example" id="rate-limiting">
-      <h2><a href="./">Go con Ejemplos</a>: Rate Limiting</h2>
+    <div class="example" id="exec-ing-processes">
+      <h2><a href="./">Go con Ejemplos</a>: Exec'ing Processes</h2>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="atomic-counters">Atomic Counters</a>.
+        Siguiente ejemplo: <a href="signals">Signals</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/rate-limiting">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/exec-ing-processes">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>
