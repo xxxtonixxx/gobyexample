@@ -1,8 +1,8 @@
 // Los [temporizadores](temporizadores) se usan cuando
 // quieres hacer una cosa en el futuro - los _tickers_
-// ( por aquello de tic tac ) cuando cuando hacer algo
-// repetidamente en intervalos regulares.
-// Aquí hay un ejemmplo de un ticker que hace tic
+// ( por aquello de tic tac ) - se usan cuando se quiere
+// hacer algo repetidamente en intervalos regulares.
+// Aquí hay un ejemplo de un ticker que hace tic
 // periodicamente hasta que lo detenemos.
 
 package main
