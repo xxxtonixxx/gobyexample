@@ -43,7 +43,7 @@ Defer
 Collection Functions
 Funciones de Cadenas
 Formateo de cadenas
-Regular Expressions
+Expresiones regulares
 JSON
 Tiempo
 Epoch
