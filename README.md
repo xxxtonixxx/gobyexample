@@ -64,6 +64,10 @@ Una vez que sepas cuál ejercicio te gustaría traducir, sigue estos pasos:
 7. Haz un [pull request][3] para que aceptemos tu traducción y cerremos el
    pendiente de la lista.
 
+No olvides que además de traducir comentarios, el código también es importante! 
+Mantener el idioma español como estándar en el repositorio ayudará a comprender 
+mejor cada ejercicio.
+
 ### License
 
 This work is copyright Mark McGranaghan and licensed under a
