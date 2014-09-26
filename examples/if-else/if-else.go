@@ -9,14 +9,14 @@ func main() {
 
     // Ejemplo básico.
     if 7%2 == 0 {
-        fmt.Println("7 is even")
+        fmt.Println("7 es par")
     } else {
-        fmt.Println("7 is odd")
+        fmt.Println("7 es impar")
     }
 
     // Puedes utilizar un `if` sin un else.
     if 8%4 == 0 {
-        fmt.Println("8 is divisible by 4")
+        fmt.Println("8 es divisible entre 4")
     }
 
     // Los condicionales pueden ser precedidos por
@@ -24,11 +24,11 @@ func main() {
     // variable declarada en dicha declaración estará disponible
     // en todas las derivaciones.
     if num := 9; num < 0 {
-        fmt.Println(num, "is negative")
+        fmt.Println(num, "es negativo")
     } else if num < 10 {
-        fmt.Println(num, "has 1 digit")
+        fmt.Println(num, "tiene 1 digito")
     } else {
-        fmt.Println(num, "has multiple digits")
+        fmt.Println(num, "tiene multiples digitos")
     }
 }
 
