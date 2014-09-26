@@ -64,7 +64,7 @@ Una vez que sepas cuál ejercicio te gustaría traducir, sigue estos pasos:
 7. Haz un [pull request][3] para que aceptemos tu traducción y cerremos el
    pendiente de la lista.
 
-Verifica que hayas traducido también las **variables** en el código, así como los
+**Verifica** que hayas traducido también las **variables** en el código, así como los
 **mensajes de salida** y **comentarios**. 
 
 No olvides que además de traducir comentarios, el código también es importante! 
