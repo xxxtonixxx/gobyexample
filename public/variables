@@ -131,7 +131,7 @@ varibale de tipo <code>int</code> es <code>0</code>.</p>
         <tr>
           <td class="docs">
             <p>La syntaxis <code>:=</code> es la abreviación para declarar e inicializar
-una variable, e.g. de <code>var f string = &#34;short&#34;</code> en este caso.</p>
+una variable, e.g. de <code>var f string = &quot;short&quot;</code> en este caso.</p>
 
           </td>
           <td class="code">

@@ -1,4 +1,4 @@
-// Go ofrece un excelente soporte para el formato de 
+// Go ofrece un excelente soporte para el formato de
 // cadenas siguiendo la tradición de `printf`. Aquí hay
 // algunos ejemplos de tareas comunes de formateo de
 // cadenas.
@@ -15,7 +15,7 @@ type point struct {
 func main() {
 
     // Go ofrece varios "verbos" de impresión, diseñados
-    // para dar formato a valores de Go simples. Por 
+    // para dar formato a valores de Go simples. Por
     // ejemplo, esto imprime una instancia de nuestra
     // estructura `point`.
     p := point{1, 2}
@@ -50,11 +50,11 @@ func main() {
     fmt.Printf("%x\n", 456)
 
     // Existen también varias opciones de formato para
-    // números de punto flotante. Para formato decimal 
+    // números de punto flotante. Para formato decimal
     // se usa `%f`.
     fmt.Printf("%f\n", 78.9)
 
-    // `%e` y `%E` dan formato a los números de punto 
+    // `%e` y `%E` dan formato a los números de punto
     // flotante usando (versiones ligeramente distintas
     //  de) la notación científica.
     fmt.Printf("%e\n", 123400000.0)
@@ -68,11 +68,11 @@ func main() {
     fmt.Printf("%q\n", "\"cadena\"")
 
     // Como con los enteros anteriormente, `%x` despliega
-    // la cadena en base-16 usando dos letras en la 
+    // la cadena en base-16 usando dos letras en la
     // salida por cada byte que haya en la entrada.
     fmt.Printf("%x\n", "hexadecimaleame esto")
 
-    // Para imprimir la representación de un apuntador 
+    // Para imprimir la representación de un apuntador
     // se usa `%p`.
     fmt.Printf("%p\n", &p)
 
@@ -86,33 +86,33 @@ func main() {
 
     // También puedes especificar el ancho de los números
     // de punto flotante y generalmente también se quiere
-    // restringir la precisión del punto decimal al mismo 
+    // restringir la precisión del punto decimal al mismo
     // tiempo. Esto se logra usando la sintáxis:
-    // ancho.precisión    
+    // ancho.precisión
     fmt.Printf("|%6.2f|%6.2f|\n", 1.2, 3.45)
 
-    // Para justificar a la izquierda se usa la bandera 
+    // Para justificar a la izquierda se usa la bandera
     // `-`.
     fmt.Printf("|%-6.2f|%-6.2f|\n", 1.2, 3.45)
 
     // También se puede querer controlar el ancho al dar
-    // formato a cadenas, especialmente si se requiere 
+    // formato a cadenas, especialmente si se requiere
     // que queden alineadas para salida tipo tabla. Para
     // justificación básica a la deerecha.
     fmt.Printf("|%6s|%6s|\n", "foo", "b")
 
-    // Para justificar a la izquierda se usa la bandera 
+    // Para justificar a la izquierda se usa la bandera
     // `-` al igual que en los números.
     fmt.Printf("|%-6s|%-6s|\n", "foo", "b")
 
     // Hasta ahora hemos usado `Printf`, que imprime la
     // cadena formateada a `os.Stdout`. `Sprintf` le da
-    // formato y regresa la cadena sin imprimirla en 
+    // formato y regresa la cadena sin imprimirla en
     // ningún lado.
     s := fmt.Sprintf("una %s", "cadena")
     fmt.Println(s)
 
-    // Se puede formateo-imprimir a otros `io.Writers` 
+    // Se puede formateo-imprimir a otros `io.Writers`
     // además de `os.Stdout` usando `Fprintf`.
     fmt.Fprintf(os.Stderr, "un %s\n", "error")
 }

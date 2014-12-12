@@ -13,6 +13,11 @@ El proceso de publicación produce un directorio de archivos estáticos
 (`public`) perfecto para ser servido por cualquier servidor HTTP moderno.
 Además, se incluye un servidor web Go ligero en `server.go`.
 
+## Versiones de Go soportadas
+
+Las herramientas incluídas en `tools/` han sido probadas con 1.2.x, 1.3.x y 1.4.x, pero podrían funcionar
+con otras versiones.
+
 ### Compilación de ejemplos
 
 Para compilar el sitio:

@@ -160,7 +160,7 @@ se utiliza con un mapa.</p>
 value from a map indicates if the key was present
 in the map. This can be used to disambiguate
 between missing keys and keys with zero values
-like <code>0</code> or <code>&#34;&#34;</code>.</p>
+like <code>0</code> or <code>&quot;&quot;</code>.</p>
 
           </td>
           <td class="code empty leading">
@@ -174,7 +174,7 @@ like <code>0</code> or <code>&#34;&#34;</code>.</p>
             <p>El segundo valor de regreso (opcional) cuando obtienes un valor de
 el mapa indica si la llave etaba presente. Este valor puede
 ser usado para separar valores de llaves que no existen y
-valores de llaves con valor cero, como <code>0</code> o <code>&#34;&#34;</code>.</p>
+valores de llaves con valor cero, como <code>0</code> o <code>&quot;&quot;</code>.</p>
 
           </td>
           <td class="code leading">

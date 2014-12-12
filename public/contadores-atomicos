@@ -25,7 +25,7 @@
           <td class="docs">
             <p>El mecanismo principal para manejar estados en Go es la comunicación
 mediante canales (channels).  Podemos ver esto, por ejemplo, con los
-<a><em>worker-pools</em></a>. Además de canales existen otras formas para
+<a href="worker-pools"><em>worker-pools</em></a>. Además de canales existen otras formas para
 manejar estados.  En éste código conoceremos el uso del paquete
 <code>sync/atomic</code> para <em>contadores atómicos</em>, los cuales pueden ser accedidos
 por múltiples <em>goroutines</em>.</p>

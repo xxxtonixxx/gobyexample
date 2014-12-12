@@ -136,7 +136,7 @@ simultaneamente, y mostraremos cada uno conforme llegue.</p>
         
         <tr>
           <td class="docs">
-            <p>Recibimos los valores <code>&#34;uno&#34;</code> y luego <code>&#34;dos&#34;</code>
+            <p>Recibimos los valores <code>&quot;uno&quot;</code> y luego <code>&quot;dos&quot;</code>
 tal y como lo esperamos.</p>
 
           </td>

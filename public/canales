@@ -89,7 +89,7 @@ transportan.</p>
         <tr>
           <td class="docs">
             <p><em>Envía</em> un valor por un canal usando la sintaxis
-<code>canal &lt;-</code>. Aquí estamos enviando <code>&#34;ping&#34;</code> al canal
+<code>canal &lt;-</code>. Aquí estamos enviando <code>&quot;ping&quot;</code> al canal
 de <code>mensajes</code> que creamos arriba, de otra nueva
 goroutine.</p>
 
@@ -105,7 +105,7 @@ goroutine.</p>
         <tr>
           <td class="docs">
             <p>La sintaxis <code>&lt;-canal</code> <em>recibe</em> un valor del canal especificado.
-Aquí recibimos el mensaje <code>&#34;ping&#34;</code> que envíamos arriba
+Aquí recibimos el mensaje <code>&quot;ping&quot;</code> que envíamos arriba
 y lo mostramos en pantalla.</p>
 
           </td>
@@ -125,7 +125,7 @@ y lo mostramos en pantalla.</p>
         
         <tr>
           <td class="docs">
-            <p>Cuando corremos el programa el mensaje <code>&#34;ping&#34;</code> se
+            <p>Cuando corremos el programa el mensaje <code>&quot;ping&quot;</code> se
 pasa de una goroutine a otra a través de nuestro
 canal.</p>
 
@@ -144,7 +144,7 @@ canal.</p>
             <p>Por defecto la recepción y los envíos se bloquean hasta
 que ambos receptor y transmisor están listos. Esta
 propiedad nos permite esperar hasta el mensaje
-<code>&#34;ping&#34;</code> hasta el final del programa sin tener
+<code>&quot;ping&quot;</code> hasta el final del programa sin tener
 que usar ningún otro tipo de sincronización.</p>
 
           </td>
