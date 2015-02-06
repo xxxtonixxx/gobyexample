@@ -100,7 +100,7 @@ func main() {
 	// Esto tiene la ventaja de añadir seguridad adicional en el tipo
 	// para nuestros programas y eliminar la necesidad de afirmar el
 	// tipo al accesar los datos decifrados.
-	str := `{"pagina": 1, "frutas": ["manzana", "durazno"]}`
+	str := `{"pagina": 1, "frutas": ["manzana", "pera"]}`
 	res := &Respuesta2{}
 	json.Unmarshal([]byte(str), &res)
 	fmt.Println(res)
