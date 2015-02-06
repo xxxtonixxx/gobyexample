@@ -4,15 +4,15 @@ true
 2.34
 "gopher"
 ["manzana","durazno","pera"]
-{"manzana":5,"lechuga":7}
+{"lechuga":7,"manzana":5}
 {"Pagina":1,"Frutas":["manzana","durazno","pera"]}
-{"paggina":1,"frutas":["manzana","durazno","pera"]}
+{"pagina":1,"frutas":["manzana","durazno","pera"]}
 map[num:6.13 strs:[a b]]
 6.13
 a
-&{1 [manzana durazno]}
+&{1 [manzana pera]}
 manzana
-{"manzana":5,"lechuga":7}
+{"lechuga":7,"manzana":5}
 
 
 # Aquí hemos cubierto lo básico de JSON para GO, pero 
