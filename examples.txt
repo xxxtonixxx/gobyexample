@@ -49,7 +49,7 @@ Tiempo
 Epoch
 Análisis de formato de fecha
 Random Numbers
-Number Parsing
+Extracción de números de cadenas de texto
 URL Parsing
 SHA1 Hashes
 Base64 Encoding
