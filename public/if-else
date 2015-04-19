@@ -38,7 +38,7 @@ se hace de manera directa.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/bVFGOHjgw9"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/hi-h_RAxmC"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -77,9 +77,9 @@ se hace de manera directa.</p>
           <td class="code leading">
           
             <div class="highlight"><pre>    <span class="k">if</span> <span class="mi">7</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7 is even&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7 es par&quot;</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7 is odd&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;7 es impar&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 </pre></div>
 
@@ -94,7 +94,7 @@ se hace de manera directa.</p>
           <td class="code leading">
           
             <div class="highlight"><pre>    <span class="k">if</span> <span class="mi">8</span><span class="o">%</span><span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;8 is divisible by 4&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;8 es divisible entre 4&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 </pre></div>
 
@@ -112,11 +112,11 @@ en todas las derivaciones.</p>
           <td class="code leading">
           
             <div class="highlight"><pre>    <span class="k">if</span> <span class="nx">num</span> <span class="o">:=</span> <span class="mi">9</span><span class="p">;</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;is negative&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;es negativo&quot;</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">num</span> <span class="p">&lt;</span> <span class="mi">10</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has 1 digit&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;tiene 1 digito&quot;</span><span class="p">)</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;has multiple digits&quot;</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">num</span><span class="p">,</span> <span class="s">&quot;tiene multiples digitos&quot;</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -147,9 +147,9 @@ condiciones en Go, pero las llaves {} si son obligatorias.</p>
           <td class="code leading">
           
             <div class="highlight"><pre><span class="gp">$</span> go run <span class="k">if</span>-else.go
-<span class="go">7 is odd</span>
-<span class="go">8 is divisible by 4</span>
-<span class="go">9 has 1 digit</span>
+<span class="go">7 es impar</span>
+<span class="go">8 es divisible entre 4</span>
+<span class="go">9 tiene 1 digito</span>
 </pre></div>
 
           </td>

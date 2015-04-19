@@ -23,7 +23,7 @@
         
         <tr>
           <td class="docs">
-            <p>Los <a>temporizadores</a> se usan cuando
+            <p>Los <a href="temporizadores">temporizadores</a> se usan cuando
 quieres hacer una cosa en el futuro - los <em>tickers</em>
 ( por aquello de tic tac ) - se usan cuando se quiere
 hacer algo repetidamente en intervalos regulares.

@@ -107,7 +107,7 @@ to safely access data across multiple goroutines.</p>
         <tr>
           <td class="docs">
             <p>To compare the mutex-based approach with another
-we’ll see later, <code>ops</code> will count how many
+we&rsquo;ll see later, <code>ops</code> will count how many
 operations we perform against the state.</p>
 
           </td>
@@ -161,7 +161,7 @@ the <code>ops</code> count.</p>
         <tr>
           <td class="docs">
             <p>In order to ensure that this goroutine
-doesn’t starve the scheduler, we explicitly
+doesn&rsquo;t starve the scheduler, we explicitly
 yield after each operation with
 <code>runtime.Gosched()</code>. This yielding is
 handled automatically with e.g. every
@@ -183,7 +183,7 @@ case we need to do it manually.</p>
         
         <tr>
           <td class="docs">
-            <p>We’ll also start 10 goroutines to simulate writes,
+            <p>We&rsquo;ll also start 10 goroutines to simulate writes,
 using the same pattern we did for reads.</p>
 
           </td>
@@ -274,7 +274,7 @@ using the same pattern we did for reads.</p>
         
         <tr>
           <td class="docs">
-            <p>Next we’ll look at implementing this same state
+            <p>Next we&rsquo;ll look at implementing this same state
 management task using only goroutines and channels.</p>
 
           </td>

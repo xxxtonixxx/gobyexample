@@ -146,7 +146,7 @@ texto.</p>
         
         <tr>
           <td class="docs">
-            <p>Las variantes ‘Submatch’ incluyen información sobre las
+            <p>Las variantes &lsquo;Submatch&rsquo; incluyen información sobre las
 coincidencias completas y parciales. Este ejemplo
 devuelve información de las coincidencias de los patrones
 <code>p([a-z]+)ch</code> and <code>([a-z]+)</code>.</p>
@@ -176,7 +176,7 @@ sobre los índices de coincidencias y subcoincidencias.</p>
         
         <tr>
           <td class="docs">
-            <p>Las variantes ‘All’ de las funciones aplican para todas
+            <p>Las variantes &lsquo;All&rsquo; de las funciones aplican para todas
 las coincidencias del texto de entrada, no solo para el
 principio. Por ejemplo para encontrar todas las
 coincidencias de una expresión regular.</p>
@@ -192,7 +192,7 @@ coincidencias de una expresión regular.</p>
         
         <tr>
           <td class="docs">
-            <p>Estas variantes ‘All’ están disponibles para las
+            <p>Estas variantes &lsquo;All&rsquo; están disponibles para las
 demás funciones que vimos anteriormente.</p>
 
           </td>
@@ -222,8 +222,8 @@ parámetro limitará el numbero de coindencias.</p>
         <tr>
           <td class="docs">
             <p>Los ejemplos anteriores tienen argumentos de cadena
-y usan nombres como ‘MatchString’. También podemos
-usar argumentos ‘[]byte’ y eliminar ‘String’ del
+y usan nombres como &lsquo;MatchString&rsquo;. También podemos
+usar argumentos &lsquo;[]byte&rsquo; y eliminar &lsquo;String&rsquo; del
 nombre de la función.
 Our examples above had string arguments and used
 names like <code>MatchString</code>. We can also provide
@@ -242,8 +242,8 @@ function name.</p>
         <tr>
           <td class="docs">
             <p>Cuando creamos constantes con expresiones regulares
-puedes utilizar la variante ‘MustCompile’ en lugar
-de ‘Compile’. La llamada ‘Compile’ no funcionará
+puedes utilizar la variante &lsquo;MustCompile&rsquo; en lugar
+de &lsquo;Compile&rsquo;. La llamada &lsquo;Compile&rsquo; no funcionará
 para crear contantes porque devuelve dos valores.</p>
 
           </td>
@@ -272,7 +272,7 @@ reemplazar subcadenas de texto con otros valores.</p>
         
         <tr>
           <td class="docs">
-            <p>La variante ‘Func’ permite transformar el texto
+            <p>La variante &lsquo;Func&rsquo; permite transformar el texto
 que coincide mediante una función.</p>
 
           </td>

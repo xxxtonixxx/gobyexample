@@ -122,7 +122,7 @@ canal <code>jobs</code> y luego lo cerramos.</p>
         <tr>
           <td class="docs">
             <p>Esperamos a que el trabajador termine usando la
-<a>sincronización</a> de
+<a href="sincronizacion-de-canales">sincronización</a> de
 canales que vimos anteriormente</p>
 
           </td>
