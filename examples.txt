@@ -50,8 +50,8 @@ Epoch
 Análisis de formato de fecha
 Random Numbers
 Extracción de números de cadenas de texto
-URL Parsing
-SHA1 Hashes
+Análisis de URL
+Huellas digitales tipo SHA1
 Base64 Encoding
 Reading Files
 Writing Files

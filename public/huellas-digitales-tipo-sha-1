@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: URL Parsing</title>
+    <title>Go con Ejemplos: Huellas digitales tipo SHA-1</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,16 +16,16 @@
 
   </script>
   <body>
-    <div class="example" id="url-parsing">
-      <h2><a href="./">Go con Ejemplos</a>: URL Parsing</h2>
+    <div class="example" id="huellas-digitales-tipo-sha-1">
+      <h2><a href="./">Go con Ejemplos</a>: Huellas digitales tipo SHA-1</h2>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="sha1-hashes">SHA1 Hashes</a>.
+        Siguiente ejemplo: <a href="base64-encoding">Base64 Encoding</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/url-parsing">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/huellas-digitales-tipo-sha-1">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

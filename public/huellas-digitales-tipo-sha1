@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Huellas digitales tipo SHA1</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="huellas-digitales-tipo-sha1">
+      <h2><a href="./">Go con Ejemplos</a>: Huellas digitales tipo SHA1</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p><a href="http://es.wikipedia.org/wiki/Secure_Hash_Algorithm#SHA-1"><em>Las huellas digitales tipo SHA-1</em></a>
+(en lo sucesivo, hashes SHA-1),
+son usadas frecuentemente para calcular pequeños identificadores
+para objetos binarios o de texto. Por ejemplo, el <a href="(http://git-scm.com/">sistema de
+control de versiones Git</a> usa SHA-1s
+para identificar archivos y directorios versionados.
+He aquí cómo calcular hashes SHA-1 en Go.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/V5L1hb6abU"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Go implementa diferentes funciones hash en varios
+paquetes ubicados en <code>crypto/*</code>; para ver la lista completa
+de funciones hash disponibles haga <a href="http://golang.org/src/crypto/crypto.go#L23">click aquí</a>.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="s">&quot;crypto/sha1&quot;</span>
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">c</span> <span class="o">:=</span> <span class="s">&quot;esta es una cadena de texto&quot;</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Los pasos para generar un hash son <code>sha1.New()</code>,
+<code>sha1.Write(bytes)</code> y, por último, <code>sha1.Sum([]byte{})</code>.
+Iniciamos creando un nuevo hash.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">h</span> <span class="o">:=</span> <span class="nx">sha1</span><span class="p">.</span><span class="nx">New</span><span class="p">()</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p><code>Write</code> espera bytes como argumento. Si tienes una cadena de texto <code>c</code>,
+usa <code>[]byte(c)</code> para forzar la conversión a bytes.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">h</span><span class="p">.</span><span class="nx">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">c</span><span class="p">))</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p><code>Sum</code> regresa el hash generado como un <a href="slices">slice</a> de bytes
+El argumento de <code>Sum</code> puede ser usado para agregar
+el resultado a un slice de bytes existente; normalmente no es utilizado.
+El nombre de la función <code>Sum</code> viene de <em>checksum</em> (suma de verificación)
+también conocido como <em>hash sum</em>.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">sb</span> <span class="o">:=</span> <span class="nx">h</span><span class="p">.</span><span class="nx">Sum</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Los valores SHA1 frecuentemente se imprimen en sistema hexadecimal,
+por ejemplo, en commits de git. Usa <code>%x</code> para convertir un hash
+a una cadena en hexadecimal.</p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%x\n&quot;</span><span class="p">,</span> <span class="nx">sb</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Este programa calcula un hash y lo imprime
+en formato hexadecimal legible para los humanos.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run huellas-digitales-tipo-sha1.go
+<span class="go">esta es una cadena de texto</span>
+<span class="go">110518500fa165c1859df82d3e32c8a127f93c1f</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Puedes calcular otros tipos de hashes siguiendo
+pasos similares a los descritos arriba. Por ejemplo,
+para calcular hashes MD5:
+<code>import crypto/md5</code> y después <code>md5.New()</code>.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Si necesitas hashes criptográficamente seguros
+debes investigar cuidadosamente sobre
+<a href="http://es.wikipedia.org/wiki/Funci%C3%B3n_hash_criptogr%C3%A1fica">nivel de fortaleza de un hash</a>!</p>
+
+          </td>
+          <td class="code empty">
+          
+            
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="base64-encoding">Base64 Encoding</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/huellas-digitales-tipo-sha1">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>
