@@ -25,11 +25,11 @@
           <td class="docs">
             <p>En el ejemplo anterior usamos un lock explícito
 con mutexes para sincronizar el acceso al estado
-compartido por muchas gorutinas. Otra opción es
+compartido por muchas gorutinas. Otra opción sería
 usar las caractarísticas de sincronización buit-in
 de las gorutinas y de los canales para obtener el mismo
 resultado. Esta forma se alinea con la idea de Go
-de compartir memoria comunicadose y que cada
+de compartir memoria a través de comunicación y que cada
 pieza de dato sea propiedad de exactamente una
 gorutina.</p>
 
@@ -45,7 +45,7 @@ gorutina.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/dx4Ewprn1G"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/wlLdptDd2J"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -72,7 +72,7 @@ gorutina.</p>
         <tr>
           <td class="docs">
             <p>En este ejemplo nuestro estado le pertenecerá
-por una sola gorutina. Esto garantiza que los
+a una sola gorutina. Esto garantiza que los
 datos jamás se corromperán por el acceso
 concurrente. Para poder leer o escribir a ese
 estado, otras gorutinas tienen que enviar

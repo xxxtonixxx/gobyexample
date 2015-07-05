@@ -40,7 +40,7 @@ Ordenamiento
 Ordenamiento por Funciones
 Panic
 Defer
-Collection Functions
+Funciones sobre colecciones
 Funciones de Cadenas
 Formateo de cadenas
 Expresiones regulares
