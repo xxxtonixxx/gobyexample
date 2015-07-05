@@ -293,7 +293,7 @@ canales.</p>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="stateful-goroutines">Stateful Goroutines</a>.
+        Siguiente ejemplo: <a href="gorutinas-con-estado">Gorutinas con estado</a>.
       </p>
       
       <p class="footer">

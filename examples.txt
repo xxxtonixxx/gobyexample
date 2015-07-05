@@ -35,7 +35,7 @@ Pool de trabajadores
 Limitación de transferencia
 Contadores atómicos
 Mutexes
-Stateful Goroutines
+Gorutinas con estado
 Ordenamiento
 Ordenamiento por Funciones
 Panic
