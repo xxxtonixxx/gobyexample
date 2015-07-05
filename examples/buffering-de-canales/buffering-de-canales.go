@@ -1,5 +1,5 @@
-// Por defecto, los canales no utilizan un buffer, lo que
-// signifca que solo aceptan envíos (`chan <-`) is hay un
+// Por defecto, los canales no usan un buffer, lo que
+// signifca que solo aceptan envíos (`chan <-`) si hay un
 // receptor correspondiente (`<- chan`) listo para recibir
 // el valor enviado. Los canales _con buffer_ pueden aceptar
 // un numero limitado de valores sin un receptor correspondiente
