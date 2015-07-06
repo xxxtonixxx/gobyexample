@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-eqiv="content-type" content="text/html;charset=utf-8">
+    <title>Go con Ejemplos: Gorutinas con estado</title>
+    <link rel=stylesheet href="site.css">
+  </head>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-51269806-1', 'goconejemplos.com');
+    ga('send', 'pageview');
+
+  </script>
+  <body>
+    <div class="example" id="gorutinas-con-estado">
+      <h2><a href="./">Go con Ejemplos</a>: Gorutinas con estado</h2>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>En el ejemplo anterior usamos un lock explícito
+con mutexes para sincronizar el acceso al estado
+compartido por muchas gorutinas. Otra opción sería
+usar las caractarísticas de sincronización buit-in
+de las gorutinas y de los canales para obtener el mismo
+resultado. Esta forma se alinea con la idea de Go
+de compartir memoria a través de comunicación y que cada
+pieza de dato sea propiedad de exactamente una
+gorutina.</p>
+
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          <a href="http://play.golang.org/p/wlLdptDd2J"><img title="Run code" src="play.png" class="run" /></a>
+            <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;math/rand&quot;</span>
+    <span class="s">&quot;sync/atomic&quot;</span>
+    <span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>En este ejemplo nuestro estado le pertenecerá
+a una sola gorutina. Esto garantiza que los
+datos jamás se corromperán por el acceso
+concurrente. Para poder leer o escribir a ese
+estado, otras gorutinas tienen que enviar
+mensajes a la gorutina dueña y recibir las
+respuestas correspondientes. Las estructuras
+<code>opLeer</code> y <code>opEscribir</code> encapsulan esas
+peticiones y son una forma de que la gorutina
+dueña pueda responder.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">type</span> <span class="nx">opLeer</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">llave</span> <span class="kt">int</span>
+    <span class="nx">resp</span>  <span class="kd">chan</span> <span class="kt">int</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">opEscribir</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">llave</span> <span class="kt">int</span>
+    <span class="nx">val</span>   <span class="kt">int</span>
+    <span class="nx">resp</span>  <span class="kd">chan</span> <span class="kt">bool</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Como antes, vamos a contar cuantas operaciones
+se realizan.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="kd">var</span> <span class="nx">ops</span> <span class="kt">int64</span> <span class="p">=</span> <span class="mi">0</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Los canales <code>lecturas</code> y <code>escrituras</code> serán usados
+por otras gorutinas para hacer peticiones de
+lectura y escritura.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">lecturas</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">opLeer</span><span class="p">)</span>
+    <span class="nx">escrituras</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="o">*</span><span class="nx">opEscribir</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Aquí está la gorutina que es dueña del <code>estado</code> que
+era un mapa en el ejemplo anterior pero ahora es de
+acceso privado para esta gorutina con estado. Esta
+gorutina seleccionea repetidamente de los canales
+<code>lecturas</code> y <code>escrituras</code>, respondiendo a las peticiones
+según llegan. Una respuesta es ejecutada primero
+respondiendo a la operación solicitada y después
+enviando un valor en el canal de respuesta <code>resp</code>
+para indicar éxito (y el valor deseado en el caso del
+canal <code>lecturas</code>).</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">estado</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kt">int</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="k">select</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="nx">leer</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">lecturas</span><span class="p">:</span>
+                <span class="nx">leer</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="nx">estado</span><span class="p">[</span><span class="nx">leer</span><span class="p">.</span><span class="nx">llave</span><span class="p">]</span>
+            <span class="k">case</span> <span class="nx">escribir</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">escrituras</span><span class="p">:</span>
+                <span class="nx">estado</span><span class="p">[</span><span class="nx">escribir</span><span class="p">.</span><span class="nx">llave</span><span class="p">]</span> <span class="p">=</span> <span class="nx">escribir</span><span class="p">.</span><span class="nx">val</span>
+                <span class="nx">escribir</span><span class="p">.</span><span class="nx">resp</span> <span class="o">&lt;-</span> <span class="kc">true</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Esto inicia 100 gorutinas para solicitar lecturas
+la gorutina dueña del estado via el canal <code>lecturas</code>.
+Cada lectura require construir una estructura <code>opLeer</code>,
+envairlo por el canal <code>lecturas</code> y recibir el
+resultado en el cadal <code>resp</code> provisto.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">r</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">r</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="nx">r</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">{</span>
+                <span class="nx">leer</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">opLeer</span><span class="p">{</span>
+                    <span class="nx">llave</span><span class="p">:</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+                    <span class="nx">resp</span><span class="p">:</span>  <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">int</span><span class="p">)}</span>
+                <span class="nx">lecturas</span> <span class="o">&lt;-</span> <span class="nx">leer</span>
+                <span class="o">&lt;-</span><span class="nx">leer</span><span class="p">.</span><span class="nx">resp</span>
+                <span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
+    <span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Iniciamos también 10 escrituras usando un
+mecanismo similar.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="k">for</span> <span class="nx">w</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">w</span> <span class="p">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">w</span><span class="o">++</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">{</span>
+                <span class="nx">escribir</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">opEscribir</span><span class="p">{</span>
+                    <span class="nx">llave</span><span class="p">:</span> <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
+                    <span class="nx">val</span><span class="p">:</span>   <span class="nx">rand</span><span class="p">.</span><span class="nx">Intn</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span>
+                    <span class="nx">resp</span><span class="p">:</span>  <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)}</span>
+                <span class="nx">escrituras</span> <span class="o">&lt;-</span> <span class="nx">escribir</span>
+                <span class="o">&lt;-</span><span class="nx">escribir</span><span class="p">.</span><span class="nx">resp</span>
+                <span class="nx">atomic</span><span class="p">.</span><span class="nx">AddInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}()</span>
+    <span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Dejamos que las gorutinas trabajen
+por un segundo.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre>    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>Finalmente capturamos y reportamos el conteo
+de <code>ops</code></p>
+
+          </td>
+          <td class="code">
+          
+            <div class="highlight"><pre>    <span class="nx">opsFinal</span> <span class="o">:=</span> <span class="nx">atomic</span><span class="p">.</span><span class="nx">LoadInt64</span><span class="p">(</span><span class="o">&amp;</span><span class="nx">ops</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;ops:&quot;</span><span class="p">,</span> <span class="nx">opsFinal</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+      </table>
+      
+      <table>
+        
+        <tr>
+          <td class="docs">
+            <p>Al correr nuestro programa vemos que la versión
+manejando el estado por la gorutina llega a cerca
+operaciones por segundo.</p>
+
+          </td>
+          <td class="code leading">
+          
+            <div class="highlight"><pre><span class="gp">$</span> go run gorutinas-con-estado.go
+<span class="go">ops: 807434</span>
+</pre></div>
+
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            <p>En este caso particular usando gorutinas fue un
+poco más complicado que el anterior usando mutexes.
+Podría ser útil bajo ciertas circunstancias, por
+ejemplo cuando otros canales están involucrados
+o cuando el tener múltimple mutexes puede ser
+suceptible a fallos. Se debe usar el que sea
+más natural en cada escenario, especialmente
+teniendo en cuenta la facilidad de entendimiento
+lo correcto de tu programa.</p>
+
+          </td>
+          <td class="code empty">
+          
+            
+          </td>
+        </tr>
+        
+      </table>
+      
+      
+      <p class="next">
+        Siguiente ejemplo: <a href="ordenamiento">Ordenamiento</a>.
+      </p>
+      
+      <p class="footer">
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/gorutinas-con-estado">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+      </p>
+    </div>
+  </body>
+</html>
