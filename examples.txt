@@ -52,7 +52,7 @@ Números aleatorios
 Extracción de números de cadenas de texto
 Análisis de URL
 Huellas digitales tipo SHA1
-Base64 Encoding
+Codificación Base64
 Reading Files
 Escritura de archivos
 Line Filters
