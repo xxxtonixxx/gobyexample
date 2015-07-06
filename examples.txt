@@ -56,7 +56,7 @@ Codificación Base64
 Lectura de archivos
 Escritura de archivos
 Filtros de línea
-Command-Line Arguments
+Argumentos en la línea de comandos
 Command-Line Flags
 Variables de entorno
 Spawning Processes
