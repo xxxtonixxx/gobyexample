@@ -61,7 +61,7 @@ Banderas de línea de comandos
 Variables de entorno
 Creando procesos
 Reemplazando procesos con exec
-Signals
+Señales
 Exit
 # HTTP Client
 # HTTPS Client

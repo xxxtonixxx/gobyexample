@@ -1,5 +1,5 @@
-// En el previo ejemplo vimos como
-// [crear un nuevo proceso](creaando-procesos). Hacemos
+// En el ejemplo previo vimos como
+// [crear un nuevo proceso](craando-procesos). Hacemos
 // esto cuando necesitamos que el proceso sea accesible
 // al proceso en Go que se está ejecutando. A veces
 // necesitamos reemplazar completamente el proceso
@@ -29,7 +29,7 @@ func main() {
     // debe de ser el nombre del programa.
     args := []string{"ls", "-a", "-l", "-h"}
 
-    // `Exec` también necesita un conjunto de [variables de entorno](variable-de-entorno).
+    // `Exec` también necesita un conjunto de [variables de entorno](variables-de-entorno).
     // Aquí solamente le pasaremos nuestro ambiente
     // actual.
     env := os.Environ()
