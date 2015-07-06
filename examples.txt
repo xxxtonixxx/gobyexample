@@ -59,8 +59,8 @@ Filtros de línea
 Argumentos en la línea de comandos
 Banderas de línea de comandos
 Variables de entorno
-Spawning Processes
-Exec'ing Processes
+Creando procesos
+Execing Processes
 Signals
 Exit
 # HTTP Client
