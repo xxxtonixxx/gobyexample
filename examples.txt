@@ -57,7 +57,7 @@ Lectura de archivos
 Escritura de archivos
 Filtros de línea
 Argumentos en la línea de comandos
-Command-Line Flags
+Banderas de línea de comandos
 Variables de entorno
 Spawning Processes
 Exec'ing Processes
