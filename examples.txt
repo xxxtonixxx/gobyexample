@@ -62,7 +62,7 @@ Variables de entorno
 Creando procesos
 Reemplazando procesos con exec
 Señales
-Exit
+Salir
 # HTTP Client
 # HTTPS Client
 # Redis
