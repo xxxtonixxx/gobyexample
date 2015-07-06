@@ -55,7 +55,7 @@ Huellas digitales tipo SHA1
 Codificación Base64
 Lectura de archivos
 Escritura de archivos
-Line Filters
+Filtros de línea
 Command-Line Arguments
 Command-Line Flags
 Variables de entorno
