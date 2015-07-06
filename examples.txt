@@ -60,7 +60,7 @@ Argumentos en la línea de comandos
 Banderas de línea de comandos
 Variables de entorno
 Creando procesos
-Execing Processes
+Reemplazando procesos con exec
 Signals
 Exit
 # HTTP Client
