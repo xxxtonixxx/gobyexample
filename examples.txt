@@ -53,7 +53,7 @@ Extracción de números de cadenas de texto
 Análisis de URL
 Huellas digitales tipo SHA1
 Codificación Base64
-Reading Files
+Lectura de archivos
 Escritura de archivos
 Line Filters
 Command-Line Arguments

@@ -23,9 +23,9 @@
         
         <tr>
           <td class="docs">
-            <p>Reading and writing files are basic tasks needed for
-many Go programs. First we&rsquo;ll look at some examples of
-reading files.</p>
+            <p>Leer y escribir archivos son tareas básicas para
+muchos programas en Go. Primero vamos a ver algunos
+ejemplo de como leer archivos.</p>
 
           </td>
           <td class="code empty leading">
@@ -39,7 +39,7 @@ reading files.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/2kEKXq-kUV"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/0ZdS60mQ94"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -66,8 +66,8 @@ reading files.</p>
         
         <tr>
           <td class="docs">
-            <p>Reading files requires checking most calls for errors.
-This helper will streamline our error checks below.</p>
+            <p>Al leer archivos revisamos si hubo error en la llamada.
+Este función auxiliar nos ayudará en el código siguiente.</p>
 
           </td>
           <td class="code leading">
@@ -96,8 +96,8 @@ This helper will streamline our error checks below.</p>
         
         <tr>
           <td class="docs">
-            <p>Perhaps the most basic file reading task is
-slurping a file&rsquo;s entire contents into memory.</p>
+            <p>Quizá la tarea más básica de lectura de archivos
+es consumir todo el contenido en memoria.</p>
 
           </td>
           <td class="code leading">
@@ -112,9 +112,10 @@ slurping a file&rsquo;s entire contents into memory.</p>
         
         <tr>
           <td class="docs">
-            <p>You&rsquo;ll often want more control over how and what
-parts of a file are read. For these tasks, start
-by <code>Open</code>ing a file to obtain an <code>os.File</code> value.</p>
+            <p>Muchas veces se necesita tener más control sobre
+cómo y que partes del archivo se leen. Para ello
+hay que empezar abriendo el archivo con la llamada
+a <code>Open</code> y obteniendo un archivo <code>os.File</code>.</p>
 
           </td>
           <td class="code leading">
@@ -128,9 +129,9 @@ by <code>Open</code>ing a file to obtain an <code>os.File</code> value.</p>
         
         <tr>
           <td class="docs">
-            <p>Read some bytes from the beginning of the file.
-Allow up to 5 to be read but also note how many
-actually were read.</p>
+            <p>Leer algunos bytes del inicio del archivo.
+Dejamos que se leean hasta 5, pero también
+revisamos cuantos fueron leídos.</p>
 
           </td>
           <td class="code leading">
@@ -146,8 +147,9 @@ actually were read.</p>
         
         <tr>
           <td class="docs">
-            <p>You can also <code>Seek</code> to a known location in the file
-and <code>Read</code> from there.</p>
+            <p>Trambién se puede buscar con <code>Seek</code> para saber
+la ubicación en el archivo y leer con <code>Read</code> desde
+ahí.</p>
 
           </td>
           <td class="code leading">
@@ -165,10 +167,10 @@ and <code>Read</code> from there.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>io</code> package provides some functions that may
-be helpful for file reading. For example, reads
-like the ones above can be more robustly
-implemented with <code>ReadAtLeast</code>.</p>
+            <p>El paquete <code>io</code> tiene funciones que pueden ser
+utiles para leer archivos. Por ejemplo, una
+lectura como la anterior puede ser implementada
+más robustamente con <code>ReadAtLeast</code></p>
 
           </td>
           <td class="code leading">
@@ -186,8 +188,8 @@ implemented with <code>ReadAtLeast</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>There is no built-in rewind, but <code>Seek(0, 0)</code>
-accomplishes this.</p>
+            <p>No hay un reboinado built-in, pero se puede
+lograr con <code>Seek(0,0)</code></p>
 
           </td>
           <td class="code leading">
@@ -201,10 +203,10 @@ accomplishes this.</p>
         
         <tr>
           <td class="docs">
-            <p>The <code>bufio</code> package implements a buffered
-reader that may be useful both for its efficiency
-with many small reads and because of the additional
-reading methods it provides.</p>
+            <p>El paquete <code>bufio</code> implementa un lector con buffer
+que puede ser útil tanto por su eficiencia con
+muchas lecturas pequeñas como por los métodos
+adicionales de lectura que ofrece.</p>
 
           </td>
           <td class="code leading">
@@ -220,26 +222,15 @@ reading methods it provides.</p>
         
         <tr>
           <td class="docs">
-            <p>Close the file when you&rsquo;re done (usually this would
-be scheduled immediately after <code>Open</code>ing with
-<code>defer</code>).</p>
+            <p>Hay que cerrar el archivo cuando hayamos terminado
+(usualmente esto se indica justo después de abrir
+el archivo usando <code>defer</code>)</p>
 
-          </td>
-          <td class="code leading">
-          
-            <div class="highlight"><pre>    <span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
-</pre></div>
-
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
           </td>
           <td class="code">
           
-            <div class="highlight"><pre><span class="p">}</span>
+            <div class="highlight"><pre>    <span class="nx">f</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+<span class="p">}</span>
 </pre></div>
 
           </td>
@@ -257,7 +248,7 @@ be scheduled immediately after <code>Open</code>ing with
           
             <div class="highlight"><pre><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;hello&quot;</span> &gt; /tmp/dat
 <span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;go&quot;</span> &gt;&gt;   /tmp/dat
-<span class="gp">$</span> go run reading-files.go 
+<span class="gp">$</span> go run leyendo-archivos.go 
 <span class="go">hello</span>
 <span class="go">go</span>
 <span class="go">5 bytes: hello</span>
@@ -271,7 +262,7 @@ be scheduled immediately after <code>Open</code>ing with
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at writing files.</p>
+            <p>A continuación veremos como escribir archivos.</p>
 
           </td>
           <td class="code empty">
