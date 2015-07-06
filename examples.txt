@@ -46,19 +46,19 @@ Formateo de cadenas
 Expresiones regulares
 JSON
 Tiempo
-Epoch
+Tiempo Unix
 Análisis de formato de fecha
-Random Numbers
+Números aleatorios
 Extracción de números de cadenas de texto
 Análisis de URL
 Huellas digitales tipo SHA1
 Base64 Encoding
 Reading Files
-Writing Files
+Escritura de archivos
 Line Filters
 Command-Line Arguments
 Command-Line Flags
-Environment Variables
+Variables de entorno
 Spawning Processes
 Exec'ing Processes
 Signals
