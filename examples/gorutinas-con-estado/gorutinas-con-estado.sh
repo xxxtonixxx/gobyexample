@@ -1,6 +1,6 @@
 # Al correr nuestro programa vemos que la versión
 # manejando el estado por la gorutina llega a cerca
-# operaciones por segundo. 
+# de 800,000 operaciones por segundo. 
 $ go run gorutinas-con-estado.go
 ops: 807434
 

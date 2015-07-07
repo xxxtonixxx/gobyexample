@@ -40,7 +40,7 @@ de línea de comando.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/GCHzuKlXuv"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/khIr2X4dck"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -50,9 +50,9 @@ de línea de comando.</p>
         <tr>
           <td class="docs">
             <p>Go provee un paquete para banderas llamado <code>flag</code>
-que provee análisis de banderas de línea de comandos
-básico. Usaremos este paquete para implementar nuestro
-ejemplo.</p>
+que provee análisis básico de banderas de línea de
+comandos. Usaremos este paquete para implementar
+nuestro ejemplo.</p>
 
           </td>
           <td class="code leading">
@@ -97,8 +97,8 @@ más adelante.</p>
         
         <tr>
           <td class="docs">
-            <p>Esto declara las banderas <code>numb</code> y <code>fork usando
-un mecanísmo similar al de la bandera</code>word`.</p>
+            <p>Esto declara las banderas <code>numb</code> y <code>fork</code> usando
+un mecanísmo similar al de la bandera <code>word</code></p>
 
           </td>
           <td class="code leading">
@@ -112,11 +112,7 @@ un mecanísmo similar al de la bandera</code>word`.</p>
         
         <tr>
           <td class="docs">
-            <p>It&rsquo;s also possible to declare an option that uses an
-existing var declared elsewhere in the program.
-Note that we need to pass in a pointer to the flag
-declaration function.
-También es posible declarar una opción que utilice
+            <p>También es posible declarar una opción que utilice
 una variable existente declarada en algún otro lado
 en el programa.
 Hay que notar que necesitamos pasarle a la función

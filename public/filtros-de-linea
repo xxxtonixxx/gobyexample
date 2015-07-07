@@ -23,10 +23,10 @@
         
         <tr>
           <td class="docs">
-            <p>Un <em>filtro de línea</em> es un tipo comun de programa
+            <p>Un <em>filtro de línea</em> es un tipo común de programa
 que lee la entrada estándar, la procesa y después
 imprime el resultado a la salida estándar. <code>grep</code>
-y <code>sed</code> con filtros de línea comunes.</p>
+y <code>sed</code> son filtros de línea comunes.</p>
 
           </td>
           <td class="code empty leading">
@@ -44,7 +44,7 @@ escribir tus propios filtros de línea.</p>
 
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/YqCZIn58dx"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/ZHzVuZF93t"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -99,7 +99,7 @@ por default.</p>
         
         <tr>
           <td class="docs">
-            <p>La llamada a <code>Text</code> no regresa el token actual,
+            <p>La llamada a <code>Text</code> nos regresa el token actual,
 aquí es la siguiente línea de la entrada.</p>
 
           </td>

@@ -1,5 +1,3 @@
-# The spawned programs return output that is the same
-# as if we had run them directly from the command-line.
 # El proceso creado regresa la salida de la misma
 # forma que si lo hubieramos corrido directamente desde
 # la línea de comandos.

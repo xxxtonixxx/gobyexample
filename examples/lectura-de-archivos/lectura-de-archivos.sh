@@ -8,4 +8,4 @@ go
 2 bytes @ 6: go
 5 bytes: hello
 
-# A continuación veremos como escribir archivos.
+# A continuación veremos como escribir en archivos.

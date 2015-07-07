@@ -1,7 +1,7 @@
-// A veces nuestros programas en Go necesitan create otro,
+// A veces nuestros programas en Go necesitan crear otro
 // proceso no-Go. Por ejemplo, el resaltador se sintáxis
-// de este site esta [implementado](https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go)
-// create un proceso de [`pygmentize`](http://pygments.org/)
+// de este sitio esta [implementado](https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go)
+// creando un proceso de [`pygmentize`](http://pygments.org/)
 // desde un programa en Go. Veamos algunos ejemplos de
 // creación de procesos desde Go.
 package main
@@ -57,7 +57,7 @@ func main() {
 
     // Cuando creamos un nuevo proceso necesitamos
     // proveer un comand explicitamente delineado y
-    // un arreglo de arguments, en vez de pasar todo
+    // un arreglo de argumentos, en vez de pasar todo
     // en una solo string. Si necesitas crear un
     // proceso con un solo string, puedes usar
     // la opción `-c ` de `bash`

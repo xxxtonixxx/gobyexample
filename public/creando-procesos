@@ -23,16 +23,16 @@
         
         <tr>
           <td class="docs">
-            <p>A veces nuestros programas en Go necesitan create otro,
+            <p>A veces nuestros programas en Go necesitan crear otro
 proceso no-Go. Por ejemplo, el resaltador se sintáxis
-de este site esta <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">implementado</a>
-create un proceso de <a href="http://pygments.org/"><code>pygmentize</code></a>
+de este sitio esta <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">implementado</a>
+creando un proceso de <a href="http://pygments.org/"><code>pygmentize</code></a>
 desde un programa en Go. Veamos algunos ejemplos de
 creación de procesos desde Go.</p>
 
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/1die6cHknf"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/ahyexeraIe"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -162,7 +162,7 @@ exactamente de la misma forma.</p>
           <td class="docs">
             <p>Cuando creamos un nuevo proceso necesitamos
 proveer un comand explicitamente delineado y
-un arreglo de arguments, en vez de pasar todo
+un arreglo de argumentos, en vez de pasar todo
 en una solo string. Si necesitas crear un
 proceso con un solo string, puedes usar
 la opción <code>-c</code> de <code>bash</code></p>
@@ -189,9 +189,7 @@ la opción <code>-c</code> de <code>bash</code></p>
         
         <tr>
           <td class="docs">
-            <p>The spawned programs return output that is the same
-as if we had run them directly from the command-line.
-El proceso creado regresa la salida de la misma
+            <p>El proceso creado regresa la salida de la misma
 forma que si lo hubieramos corrido directamente desde
 la línea de comandos.</p>
 

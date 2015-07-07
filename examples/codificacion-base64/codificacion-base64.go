@@ -14,7 +14,7 @@ func main() {
     // Aquí esta la cadena que codificaremos/decodificaremos
     data := "abc123!?$*&()'-=@~"
 
-    // Go soporta ambas formas: base64 estándar y compatibla
+    // Go soporta ambas formas: base64 estándar y compatible
     // con URLs. El codificador necesita un `[]byte` así que
     // hacemos cast a nuestra cadena a ese tipo.
     sEnc := b64.StdEncoding.EncodeToString([]byte(data))

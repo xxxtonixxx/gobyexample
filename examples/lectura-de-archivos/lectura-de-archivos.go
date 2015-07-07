@@ -1,6 +1,6 @@
 // Leer y escribir archivos son tareas básicas para
 // muchos programas en Go. Primero vamos a ver algunos
-// ejemplo de como leer archivos.
+// ejemplos de como leer archivos.
 
 package main
 
@@ -13,7 +13,7 @@ import (
 )
 
 // Al leer archivos revisamos si hubo error en la llamada.
-// Este función auxiliar nos ayudará en el código siguiente.
+// Este función auxiliar nos ayudará en el código que sigue.
 func check(e error) {
     if e != nil {
         panic(e)
@@ -29,13 +29,13 @@ func main() {
     fmt.Print(string(dat))
 
     // Muchas veces se necesita tener más control sobre
-    // cómo y que partes del archivo se leen. Para ello
+    // cómo y qué partes del archivo se leen. Para ello
     // hay que empezar abriendo el archivo con la llamada
     // a `Open` y obteniendo un archivo `os.File`.
     f, err := os.Open("/tmp/dat")
     check(err)
 
-    // Leer algunos bytes del inicio del archivo.
+    // Leemos algunos bytes del inicio del archivo.
     // Dejamos que se leean hasta 5, pero también
     // revisamos cuantos fueron leídos.
     b1 := make([]byte, 5)
@@ -43,9 +43,9 @@ func main() {
     check(err)
     fmt.Printf("%d bytes: %s\n", n1, string(b1))
 
-    // Trambién se puede buscar con `Seek` para saber
-    // la ubicación en el archivo y leer con `Read` desde
-    // ahí.
+    // También se puede buscar con `Seek` para saber
+    // la ubicación en el archivo y leer con `Read`
+    // a partir de ahí.
     o2, err := f.Seek(6, 0)
     check(err)
     b2 := make([]byte, 2)
@@ -64,7 +64,7 @@ func main() {
     check(err)
     fmt.Printf("%d bytes @ %d: %s\n", n3, o3, string(b3))
 
-    // No hay un reboinado built-in, pero se puede
+    // No hay un rebobinado built-in, pero se puede
     // lograr con `Seek(0,0)`
     _, err = f.Seek(0, 0)
     check(err)

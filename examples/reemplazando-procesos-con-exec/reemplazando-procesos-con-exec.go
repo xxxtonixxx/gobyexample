@@ -1,5 +1,5 @@
 // En el ejemplo previo vimos como
-// [crear un nuevo proceso](craando-procesos). Hacemos
+// [crear un nuevo proceso](creando-procesos). Hacemos
 // esto cuando necesitamos que el proceso sea accesible
 // al proceso en Go que se está ejecutando. A veces
 // necesitamos reemplazar completamente el proceso
@@ -17,14 +17,14 @@ func main() {
     // Para nuestro ejemplo usaremos `ls`. Go necesita
     // la ruta absoluta al binario que queremos ejecutar,
     // así que usaremos `exec.LookPath` para encontrarla
-    // (probablemente en `/bin/ls`).
+    // (probablemente está en `/bin/ls`).
     binary, lookErr := exec.LookPath("ls")
     if lookErr != nil {
         panic(lookErr)
     }
 
     // `Exec` necesita los argumentos en forma de slice
-    // (en vez de un gran string). Le daremos a `ls`
+    // (en vez de un solo string). Le daremos a `ls`
     // algunos argumentos comunes. El primer argumento
     // debe de ser el nombre del programa.
     args := []string{"ls", "-a", "-l", "-h"}
@@ -38,7 +38,7 @@ func main() {
     // es exitósa, la ejecución de nuestro proceso
     // terminará y será reemplazada por el proceso
     // `/bin/ls -a -l -h`. Si existe algún error,
-    // recibiremos un valor de retorn.
+    // recibiremos un valor de retorno.
     execErr := syscall.Exec(binary, args, env)
     if execErr != nil {
         panic(execErr)

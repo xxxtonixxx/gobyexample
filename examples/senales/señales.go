@@ -18,12 +18,12 @@ func main() {
     // La nofiticación de señales en Go funciona
     // enviando valores por el canal `os.Signal`.
     // Vamos a crear un canal que reciba estas
-    // notificaciones ( también vamos a crear uno que
+    // notificaciones (también vamos a crear uno que
     // nos notifique cuando el programa puede terminar).
     sigs := make(chan os.Signal, 1)
     done := make(chan bool, 1)
 
-    // `signal.Notify` registra el canal pasado para
+    // `signal.Notify` registra el canal para
     // recibir notificaciones de las señales dadas.
     signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 
@@ -39,7 +39,7 @@ func main() {
 
     // El programa esperará aquí hasta que reciba
     // la señal esperada (indicada por la gorutina
-    // anterior que envía un valor de terminado `done`)
+    // anterior y envía un valor de terminado `done`)
     // y después sale.
     fmt.Println("awaiting signal")
     <-done

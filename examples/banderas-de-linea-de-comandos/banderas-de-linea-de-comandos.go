@@ -6,9 +6,9 @@
 package main
 
 // Go provee un paquete para banderas llamado `flag`
-// que provee análisis de banderas de línea de comandos
-// básico. Usaremos este paquete para implementar nuestro
-// ejemplo.
+// que provee análisis básico de banderas de línea de
+// comandos. Usaremos este paquete para implementar
+// nuestro ejemplo.
 import "flag"
 import "fmt"
 
@@ -23,15 +23,11 @@ func main() {
     // más adelante.
     wordPtr := flag.String("word", "foo", "a string")
 
-    // Esto declara las banderas `numb` y `fork usando
-    // un mecanísmo similar al de la bandera `word`.
+    // Esto declara las banderas `numb` y `fork` usando
+    // un mecanísmo similar al de la bandera `word`
     numbPtr := flag.Int("numb", 42, "an int")
     boolPtr := flag.Bool("fork", false, "a bool")
 
-    // It's also possible to declare an option that uses an
-    // existing var declared elsewhere in the program.
-    // Note that we need to pass in a pointer to the flag
-    // declaration function.
     // También es posible declarar una opción que utilice
     // una variable existente declarada en algún otro lado
     // en el programa.

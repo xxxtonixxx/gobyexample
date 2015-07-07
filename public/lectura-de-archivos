@@ -25,7 +25,7 @@
           <td class="docs">
             <p>Leer y escribir archivos son tareas básicas para
 muchos programas en Go. Primero vamos a ver algunos
-ejemplo de como leer archivos.</p>
+ejemplos de como leer archivos.</p>
 
           </td>
           <td class="code empty leading">
@@ -39,7 +39,7 @@ ejemplo de como leer archivos.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/0ZdS60mQ94"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/ArArl1mxR1"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -67,7 +67,7 @@ ejemplo de como leer archivos.</p>
         <tr>
           <td class="docs">
             <p>Al leer archivos revisamos si hubo error en la llamada.
-Este función auxiliar nos ayudará en el código siguiente.</p>
+Este función auxiliar nos ayudará en el código que sigue.</p>
 
           </td>
           <td class="code leading">
@@ -113,7 +113,7 @@ es consumir todo el contenido en memoria.</p>
         <tr>
           <td class="docs">
             <p>Muchas veces se necesita tener más control sobre
-cómo y que partes del archivo se leen. Para ello
+cómo y qué partes del archivo se leen. Para ello
 hay que empezar abriendo el archivo con la llamada
 a <code>Open</code> y obteniendo un archivo <code>os.File</code>.</p>
 
@@ -129,7 +129,7 @@ a <code>Open</code> y obteniendo un archivo <code>os.File</code>.</p>
         
         <tr>
           <td class="docs">
-            <p>Leer algunos bytes del inicio del archivo.
+            <p>Leemos algunos bytes del inicio del archivo.
 Dejamos que se leean hasta 5, pero también
 revisamos cuantos fueron leídos.</p>
 
@@ -147,9 +147,9 @@ revisamos cuantos fueron leídos.</p>
         
         <tr>
           <td class="docs">
-            <p>Trambién se puede buscar con <code>Seek</code> para saber
-la ubicación en el archivo y leer con <code>Read</code> desde
-ahí.</p>
+            <p>También se puede buscar con <code>Seek</code> para saber
+la ubicación en el archivo y leer con <code>Read</code>
+a partir de ahí.</p>
 
           </td>
           <td class="code leading">
@@ -188,7 +188,7 @@ más robustamente con <code>ReadAtLeast</code></p>
         
         <tr>
           <td class="docs">
-            <p>No hay un reboinado built-in, pero se puede
+            <p>No hay un rebobinado built-in, pero se puede
 lograr con <code>Seek(0,0)</code></p>
 
           </td>
@@ -262,7 +262,7 @@ el archivo usando <code>defer</code>)</p>
         
         <tr>
           <td class="docs">
-            <p>A continuación veremos como escribir archivos.</p>
+            <p>A continuación veremos como escribir en archivos.</p>
 
           </td>
           <td class="code empty">

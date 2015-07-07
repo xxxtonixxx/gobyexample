@@ -29,7 +29,7 @@ func main() {
     // hechas con el `estado`
     var ops int64 = 0
 
-    // Aquí vamos a iniciar 100 gorutinas que leeran
+    // Aquí vamos a iniciar 100 gorutinas que leerán
     // contastantemente el `estado`
     for r := 0; r < 100; r++ {
         go func() {
@@ -52,7 +52,7 @@ func main() {
                 // Para asegurar que esta gorutina
                 // no asfixie al scheduler, vamos a ceder
                 // explicitamente después de cada operación
-                // llamando `runtime.Gosched()`. Este ceder
+                // llamando `runtime.Gosched()`. Este "ceder"
                 // es manejado automáticamente con operaciones
                 // en canales y al realizar llamadas
                 // bloqueantes como `time.Sleep`, pero en
@@ -78,15 +78,15 @@ func main() {
         }()
     }
 
-    // Dejamoque que las 10 gorutinas trabajen en el `estado`
-    // y en el `mutesx` por un segundo.
+    // Dejamos que que las 10 gorutinas trabajen en el `estado`
+    // y en el `mutex` por un segundo.
     time.Sleep(time.Second)
 
     // Tomamos y reportamos un conteo final de operaciones
     opsFinal := atomic.LoadInt64(&ops)
     fmt.Println("ops:", opsFinal)
 
-    // Con un bloqueo final del `estado`, mostramos como
+    // Hacemo un bloqueo final del `estado` y mostramos como
     // terminó
     mutex.Lock()
     fmt.Println("estado:", estado)
