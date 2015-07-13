@@ -41,7 +41,7 @@ datos desde múltiples goroutines.</p>
             
           </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/IfhNp0g0aS"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/8t0Uujz4iW"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -123,7 +123,7 @@ hechas con el <code>estado</code></p>
         
         <tr>
           <td class="docs">
-            <p>Aquí vamos a iniciar 100 gorutinas que leeran
+            <p>Aquí vamos a iniciar 100 gorutinas que leerán
 contastantemente el <code>estado</code></p>
 
           </td>
@@ -166,7 +166,7 @@ e incrementamos el contador <code>ops</code></p>
             <p>Para asegurar que esta gorutina
 no asfixie al scheduler, vamos a ceder
 explicitamente después de cada operación
-llamando <code>runtime.Gosched()</code>. Este ceder
+llamando <code>runtime.Gosched()</code>. Este &ldquo;ceder&rdquo;
 es manejado automáticamente con operaciones
 en canales y al realizar llamadas
 bloqueantes como <code>time.Sleep</code>, pero en
@@ -212,8 +212,8 @@ usando el mismo patrón que usamos en las lecturas.</p>
         
         <tr>
           <td class="docs">
-            <p>Dejamoque que las 10 gorutinas trabajen en el <code>estado</code>
-y en el <code>mutesx</code> por un segundo.</p>
+            <p>Dejamos que que las 10 gorutinas trabajen en el <code>estado</code>
+y en el <code>mutex</code> por un segundo.</p>
 
           </td>
           <td class="code leading">
@@ -240,7 +240,7 @@ y en el <code>mutesx</code> por un segundo.</p>
         
         <tr>
           <td class="docs">
-            <p>Con un bloqueo final del <code>estado</code>, mostramos como
+            <p>Hacemo un bloqueo final del <code>estado</code> y mostramos como
 terminó</p>
 
           </td>

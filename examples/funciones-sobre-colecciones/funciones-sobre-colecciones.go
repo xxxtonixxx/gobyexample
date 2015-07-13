@@ -1,7 +1,7 @@
 // Muchas veces necesitamos que nuestros programas
 // ejecuten operaciones sobre colecciones de datos,
 // como seleccionar todos los elementos que satisfagan
-// una predicado o mapear todos los elementos
+// un predicado o mapear todos los elementos
 // a una nueva colección con una función custom.
 
 // En algunos lenguajes es idiomático usar estucturas
@@ -106,6 +106,6 @@ func main() {
 
     // Los ejemplos anteriores utilizan todos, funciones
     // anónimas pero también puedes usar funciones nombradas
-    // econ el tipo correcto.
+    // con el tipo correcto.
     fmt.Println(Map(strs, strings.ToUpper))
 }

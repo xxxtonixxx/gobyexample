@@ -1,6 +1,6 @@
 $ echo "hello" > /tmp/dat
 $ echo "go" >>   /tmp/dat
-$ go run reading-files.go 
+$ go run leyendo-archivos.go 
 hello
 go
 5 bytes: hello
@@ -8,4 +8,4 @@ go
 2 bytes @ 6: go
 5 bytes: hello
 
-# Next we'll look at writing files.
+# A continuación veremos como escribir en archivos.

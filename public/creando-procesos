@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Spawning Processes</title>
+    <title>Go con Ejemplos: Creando procesos</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,33 +16,23 @@
 
   </script>
   <body>
-    <div class="example" id="spawning-processes">
-      <h2><a href="./">Go con Ejemplos</a>: Spawning Processes</h2>
+    <div class="example" id="creando-procesos">
+      <h2><a href="./">Go con Ejemplos</a>: Creando procesos</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>Sometimes our Go programs need to spawn other, non-Go
-processes. For example, the syntax highlighting on this
-site is <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">implemented</a>
-by spawning a <a href="http://pygments.org/"><code>pygmentize</code></a>
-process from a Go program. Let&rsquo;s look at a few examples
-of spawning processes from Go.</p>
+            <p>A veces nuestros programas en Go necesitan crear otro
+proceso no-Go. Por ejemplo, el resaltador se sintáxis
+de este sitio esta <a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">implementado</a>
+creando un proceso de <a href="http://pygments.org/"><code>pygmentize</code></a>
+desde un programa en Go. Veamos algunos ejemplos de
+creación de procesos desde Go.</p>
 
           </td>
-          <td class="code empty leading">
-          
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
-          </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/utd_H-XJtC"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/ahyexeraIe"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -77,10 +67,10 @@ of spawning processes from Go.</p>
         
         <tr>
           <td class="docs">
-            <p>We&rsquo;ll start with a simple command that takes no
-arguments or input and just prints something to
-stdout. The <code>exec.Command</code> helper creates an object
-to represent this external process.</p>
+            <p>Empezaremos con un simple comando que no recibe
+argumentos y que solo imprime algo en la salida
+estándar. El auxilar <code>exec.Command</code> crea un
+objeto para representar este proces externo.</p>
 
           </td>
           <td class="code leading">
@@ -93,10 +83,10 @@ to represent this external process.</p>
         
         <tr>
           <td class="docs">
-            <p><code>.Output</code> is another helper than handles the common
-case of running a command, waiting for it to finish,
-and collecting its output. If there were no errors,
-<code>dateOut</code> will hold bytes with the date info.</p>
+            <p><code>.Output</code> es otro auxiliar que ayuda en el caso de
+ejecutar un programa, esperar a que termine y
+recolectar su salida. Si no hay errores, <code>dateOut</code>
+contendra los bytes con la información solicitada.</p>
 
           </td>
           <td class="code leading">
@@ -114,9 +104,10 @@ and collecting its output. If there were no errors,
         
         <tr>
           <td class="docs">
-            <p>Next we&rsquo;ll look at a slightly more involved case
-where we pipe data to the external process on its
-<code>stdin</code> and collect the results from its <code>stdout</code>.</p>
+            <p>A continuación veremos un caso un poco más complejo
+donde conectaremos los datos al proceso externo
+usando su entrada estándar y recopilaremos los
+resultados de su salida estándar.</p>
 
           </td>
           <td class="code leading">
@@ -129,10 +120,10 @@ where we pipe data to the external process on its
         
         <tr>
           <td class="docs">
-            <p>Here we explicitly grab input/output pipes, start
-the process, write some input to it, read the
-resulting output, and finally wait for the process
-to exit.</p>
+            <p>Aquí vamos a tomar explícitamente la salida y la
+entrada, comenzaremos el proceso, escribiremos
+un poco en él, leeremos el resultado de la salida
+y finalmente esperaremos a que termine el proceso.</p>
 
           </td>
           <td class="code leading">
@@ -151,11 +142,11 @@ to exit.</p>
         
         <tr>
           <td class="docs">
-            <p>We ommited error checks in the above example, but
-you could use the usual <code>if err != nil</code> pattern for
-all of them. We also only collect the <code>StdoutPipe</code>
-results, but you could collect the <code>StderrPipe</code> in
-exactly the same way.</p>
+            <p>Omitimos el manejo de errores en el ejemplo anterior
+pero podrías usar el patrón usual <code>if err != nil</code>.
+También hemos leído solamente la salida estándar
+pero podríamos haber leído el error estándar
+exactamente de la misma forma.</p>
 
           </td>
           <td class="code leading">
@@ -169,12 +160,12 @@ exactly the same way.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that when spawning commands we need to
-provide an explicitly delineated command and
-argument array, vs. being able to just pass in one
-command-line string. If you want to spawn a full
-command with a string, you can use <code>bash</code>&rsquo;s <code>-c</code>
-option:</p>
+            <p>Cuando creamos un nuevo proceso necesitamos
+proveer un comand explicitamente delineado y
+un arreglo de argumentos, en vez de pasar todo
+en una solo string. Si necesitas crear un
+proceso con un solo string, puedes usar
+la opción <code>-c</code> de <code>bash</code></p>
 
           </td>
           <td class="code">
@@ -198,13 +189,24 @@ option:</p>
         
         <tr>
           <td class="docs">
-            <p>The spawned programs return output that is the same
-as if we had run them directly from the command-line.</p>
+            <p>El proceso creado regresa la salida de la misma
+forma que si lo hubieramos corrido directamente desde
+la línea de comandos.</p>
 
+          </td>
+          <td class="code empty leading">
+          
+            
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="docs">
+            
           </td>
           <td class="code leading">
           
-            <div class="highlight"><pre><span class="gp">$</span> go run spawning-processes.go 
+            <div class="highlight"><pre><span class="gp">$</span> go run creando-procesos.go 
 <span class="gp">&gt;</span> date
 <span class="go">Wed Oct 10 09:53:11 PDT 2012</span>
 </pre></div>
@@ -234,7 +236,7 @@ as if we had run them directly from the command-line.</p>
             <div class="highlight"><pre><span class="gp">&gt;</span> ls -a -l -h
 <span class="go">drwxr-xr-x  4 mark 136B Oct 3 16:29 .</span>
 <span class="go">drwxr-xr-x 91 mark 3.0K Oct 3 12:50 ..</span>
-<span class="go">-rw-r--r--  1 mark 1.3K Oct 3 16:28 spawning-processes.go</span>
+<span class="go">-rw-r--r--  1 mark 1.3K Oct 3 16:28 creando-procesos.go</span>
 </pre></div>
 
           </td>
@@ -244,11 +246,11 @@ as if we had run them directly from the command-line.</p>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="execing-processes">Execing Processes</a>.
+        Siguiente ejemplo: <a href="reemplazando-procesos-con-exec">Reemplazando procesos con exec</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/spawning-processes">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/creando-procesos">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta http-eqiv="content-type" content="text/html;charset=utf-8">
-    <title>Go con Ejemplos: Execing Processes</title>
+    <title>Go con Ejemplos: Reemplazando procesos con exec</title>
     <link rel=stylesheet href="site.css">
   </head>
   <script>
@@ -16,36 +16,25 @@
 
   </script>
   <body>
-    <div class="example" id="execing-processes">
-      <h2><a href="./">Go con Ejemplos</a>: Execing Processes</h2>
+    <div class="example" id="reemplazando-procesos-con-exec">
+      <h2><a href="./">Go con Ejemplos</a>: Reemplazando procesos con exec</h2>
       
       <table>
         
         <tr>
           <td class="docs">
-            <p>In the previous example we looked at
-<a href="spawning-processes">spawning external processes</a>. We
-do this when we need an external process accessible to
-a running Go process. Sometimes we just want to
-completely replace the current Go process with another
-(perhaps non-Go) one. To do this we&rsquo;ll use Go&rsquo;s
-implementation of the classic
-<a href="http://en.wikipedia.org/wiki/Exec_(operating_system)"><code>exec</code></a>
-function.</p>
+            <p>En el ejemplo previo vimos como
+<a href="creando-procesos">crear un nuevo proceso</a>. Hacemos
+esto cuando necesitamos que el proceso sea accesible
+al proceso en Go que se está ejecutando. A veces
+necesitamos reemplazar completamente el proceso
+actual en Go con otro proceso (quizá no-Go). Para
+ello usaremo la implementación en Go de la clásica
+función <a href="http://en.wikipedia.org/wiki/Exec_(operating_system)"><code>exec</code></a>.</p>
 
           </td>
-          <td class="code empty leading">
-          
-            
-          </td>
-        </tr>
-        
-        <tr>
-          <td class="docs">
-            
-          </td>
           <td class="code leading">
-          <a href="http://play.golang.org/p/iEAD2cYC-h"><img title="Run code" src="play.png" class="run" /></a>
+          <a href="http://play.golang.org/p/cNx3Z41k9g"><img title="Run code" src="play.png" class="run" /></a>
             <div class="highlight"><pre><span class="kn">package</span> <span class="nx">main</span>
 </pre></div>
 
@@ -80,10 +69,10 @@ function.</p>
         
         <tr>
           <td class="docs">
-            <p>For our example we&rsquo;ll exec <code>ls</code>. Go requires an
-absolute path to the binary we want to execute, so
-we&rsquo;ll use <code>exec.LookPath</code> to find it (probably
-<code>/bin/ls</code>).</p>
+            <p>Para nuestro ejemplo usaremos <code>ls</code>. Go necesita
+la ruta absoluta al binario que queremos ejecutar,
+así que usaremos <code>exec.LookPath</code> para encontrarla
+(probablemente está en <code>/bin/ls</code>).</p>
 
           </td>
           <td class="code leading">
@@ -99,10 +88,10 @@ we&rsquo;ll use <code>exec.LookPath</code> to find it (probably
         
         <tr>
           <td class="docs">
-            <p><code>Exec</code> requires arguments in slice form (as
-apposed to one big string). We&rsquo;ll give <code>ls</code> a few
-common arguments. Note that the first argument should
-be the program name.</p>
+            <p><code>Exec</code> necesita los argumentos en forma de slice
+(en vez de un solo string). Le daremos a <code>ls</code>
+algunos argumentos comunes. El primer argumento
+debe de ser el nombre del programa.</p>
 
           </td>
           <td class="code leading">
@@ -115,9 +104,9 @@ be the program name.</p>
         
         <tr>
           <td class="docs">
-            <p><code>Exec</code> also needs a set of <a href="environment-variables">environment variables</a>
-to use. Here we just provide our current
-environment.</p>
+            <p><code>Exec</code> también necesita un conjunto de <a href="variables-de-entorno">variables de entorno</a>.
+Aquí solamente le pasaremos nuestro ambiente
+actual.</p>
 
           </td>
           <td class="code leading">
@@ -130,11 +119,11 @@ environment.</p>
         
         <tr>
           <td class="docs">
-            <p>Here&rsquo;s the actual <code>os.Exec</code> call. If this call is
-successful, the execution of our process will end
-here and be replaced by the <code>/bin/ls -a -l -h</code>
-process. If there is an error we&rsquo;ll get a return
-value.</p>
+            <p>Aquí está la llamada a <code>os.Exec</code>. Si la llamada
+es exitósa, la ejecución de nuestro proceso
+terminará y será reemplazada por el proceso
+<code>/bin/ls -a -l -h</code>. Si existe algún error,
+recibiremos un valor de retorno.</p>
 
           </td>
           <td class="code">
@@ -155,16 +144,18 @@ value.</p>
         
         <tr>
           <td class="docs">
-            <p>When we run our program it is replaced by <code>ls</code>.</p>
+            <p>Cuando corremos nuestro programa este es
+reemplazado por <code>ls</code>.</p>
 
           </td>
           <td class="code leading">
           
-            <div class="highlight"><pre><span class="gp">$</span> go run execing-processes.go
+            <div class="highlight"><pre><span class="gp">$</span> go run reemplazando-procesos-con-exec.go
 <span class="go">total 16</span>
 <span class="go">drwxr-xr-x  4 mark 136B Oct 3 16:29 .</span>
 <span class="go">drwxr-xr-x 91 mark 3.0K Oct 3 12:50 ..</span>
-<span class="go">-rw-r--r--  1 mark 1.3K Oct 3 16:28 execing-processes.go</span>
+<span class="go">-rw-r--r--  1 mark 1.3K Oct 3 16:28 </span>
+<span class="go">reemplazando-procesos-con-exec.go</span>
 </pre></div>
 
           </td>
@@ -172,10 +163,11 @@ value.</p>
         
         <tr>
           <td class="docs">
-            <p>Note that Go does not offer a classic Unix <code>fork</code>
-function. Usually this isn&rsquo;t an issue though, since
-starting goroutines, spawning processes, and exec&rsquo;ing
-processes covers most use cases for <code>fork</code>.</p>
+            <p>Go no ofrece un clásico <code>fork</code> de Unix.
+Usualmente esto no causa problems ya que
+crear gorutinas, lanzar nuevos procesos
+y reemplazar el proceso actual con exec,
+cubre la mayoría de los usos de <code>fork</code>.</p>
 
           </td>
           <td class="code empty">
@@ -188,11 +180,11 @@ processes covers most use cases for <code>fork</code>.</p>
       
       
       <p class="next">
-        Siguiente ejemplo: <a href="signals">Signals</a>.
+        Siguiente ejemplo: <a href="senales">Señales</a>.
       </p>
       
       <p class="footer">
-        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/execing-processes">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
+        by <a href="https://twitter.com/mmcgrana">@mmcgrana</a> | <a href="mailto:mmcgrana@gmail.com">feedback</a> | <a href="https://github.com/mmcgrana/gobyexample/blob/master/examples/reemplazando-procesos-con-exec">source</a> | <a href="https://github.com/mmcgrana/gobyexample#license">license</a>
       </p>
     </div>
   </body>

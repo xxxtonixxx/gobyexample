@@ -53,16 +53,16 @@ Extracción de números de cadenas de texto
 Análisis de URL
 Huellas digitales tipo SHA1
 Codificación Base64
-Reading Files
+Lectura de archivos
 Escritura de archivos
-Line Filters
-Command-Line Arguments
-Command-Line Flags
+Filtros de línea
+Argumentos en la línea de comandos
+Banderas de línea de comandos
 Variables de entorno
-Spawning Processes
-Exec'ing Processes
-Signals
-Exit
+Creando procesos
+Reemplazando procesos con exec
+Señales
+Salir
 # HTTP Client
 # HTTPS Client
 # Redis

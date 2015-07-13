@@ -1,7 +1,7 @@
 // En el ejemplo anterior usamos un lock explícito
 // con mutexes para sincronizar el acceso al estado
 // compartido por muchas gorutinas. Otra opción sería
-// usar las caractarísticas de sincronización buit-in
+// usar las caractarísticas de sincronización built-in
 // de las gorutinas y de los canales para obtener el mismo
 // resultado. Esta forma se alinea con la idea de Go
 // de compartir memoria a través de comunicación y que cada
@@ -50,10 +50,10 @@ func main() {
     escrituras := make(chan *opEscribir)
 
     // Aquí está la gorutina que es dueña del `estado` que
-    // era un mapa en el ejemplo anterior pero ahora es de
+    // en el ejemplo anterior era un mapa, pero ahora es de
     // acceso privado para esta gorutina con estado. Esta
     // gorutina seleccionea repetidamente de los canales
-    // `lecturas` y `escrituras`, respondiendo a las peticiones
+    // `lecturas` y `escrituras` respondiendo a las peticiones
     // según llegan. Una respuesta es ejecutada primero
     // respondiendo a la operación solicitada y después
     // enviando un valor en el canal de respuesta `resp`
@@ -72,8 +72,8 @@ func main() {
         }
     }()
 
-    // Esto inicia 100 gorutinas para solicitar lecturas
-    // la gorutina dueña del estado via el canal `lecturas`.
+    // Iniciamos 100 gorutinas para solicitar lecturas
+    // a la gorutina dueña del estado, via el canal `lecturas`.
     // Cada lectura require construir una estructura `opLeer`,
     // envairlo por el canal `lecturas` y recibir el
     // resultado en el cadal `resp` provisto.
