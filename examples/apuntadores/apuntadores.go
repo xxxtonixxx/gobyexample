@@ -18,7 +18,7 @@ func zeroval(ival int) {
 // `zeroptr` recibe un parametro `*int`, lo que significa
 // que recibe un apuntador a un valor `int`. El código `*iptr` en el
 // cuerpo de la función _dereferencía_ el apuntador de su dirección de
-// memoria a el valor actual de esa dirección.
+// memoria al valor actual de esa dirección.
 // Si asignamos un valor a un apuntador dereferenciado se cambia el valor
 // que se está almacenando en dicha dirección de memoria.
 func zeroptr(iptr *int) {
